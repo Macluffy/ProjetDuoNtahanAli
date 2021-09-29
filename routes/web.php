@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/index', function () {
     return view('pages.index');
 });
 
@@ -22,3 +22,13 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+Route::resource('header', HeaderController::class);
+
+Route::resource('hero', heroController::class);
+
+Route::resource('about', AboutController::class);
+
+Route::resource('feature', FeatureController::class);
+
+Route::resource('Service', ServiceController::class);

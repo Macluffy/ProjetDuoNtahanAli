@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FooterController;
+use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +27,10 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+
+Route::resource('/portfolios', PortfolioController::class );
+Route::resource('/testimonials', TestimonialController::class);
+Route::resource("/teams", TeamController::class);
+Route::resource("/contacts", ContactController::class);
+Route::resource("/footers", FooterController::class);

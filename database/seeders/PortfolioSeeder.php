@@ -42,7 +42,6 @@ class PortfolioSeeder extends Seeder
             ['titreimg' => 'Web 3' ,
             'categorie' => 'Web' ,
             'img' => '/img/portfolio/portfolio-9.jpg'],
-
         ]);
     }
 }

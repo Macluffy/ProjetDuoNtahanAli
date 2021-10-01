@@ -5,8 +5,8 @@
 
 
     <div class="container d-flex justify-content-center flex-column mt-5 w-25">
-        <h1 class="text-center">Contact</h1>
-        <a href="{{ route('contacts.create') }}" class="btn btn-success mb-2 mt-2 text-white">Create</a>
+        <h1 class="text-center">Footer</h1>
+        <a href="{{ route('footers.create') }}" class="btn btn-success mb-2 mt-2 text-white">Create</a>
     </div>
 
 
@@ -44,20 +44,40 @@
             </tr> 
         </thead>
         <tbody>
-            @foreach ($contact as $data)
+            @foreach ($footer as $data)
                 <tr>
                     <th scope="row">{{ $data->id }}</th>
-                    <td>{{ $data->adress  }}</td>
-                    <td>{{ $data->rue }}</td>
-                    <td>{{ $data->emailadress }}</td>
-                    <td>{{ $data->contactadress }}</td>
-                    <td>{{ $data->number1 }}</td>
-                    <td>{{ $data->number2 }}</td>
+                    <td>{{ $data->nom }}</td>
+                    <td>{{ $data->adress }}</td>
+                    <td>{{ $data->ville }}</td>
+                    <td>{{ $data->tel }}</td>
+                    <td>{{ $data->numtel }}</td>
+                    <td>{{ $data->email }}</td>
+                    <td>{{ $data->emailadress  }}</td>
+                    <td>{{ $data->links }}</td>
+                    <td>{{ $data->link1 }}</td>
+                    <td>{{ $data->link2 }}</td>
+                    <td>{{ $data->link3 }}</td>
+                    <td>{{ $data->link4 }}</td>
+                    <td>{{ $data->link5  }}</td>
+                    <td>{{ $data->services }}</td>
+                    <td>{{ $data->link6 }}</td>
+                    <td>{{ $data->link7 }}</td>
+                    <td>{{ $data->link8 }}</td>
+                    <td>{{ $data->link9 }}</td>
+                    <td>{{ $data->link10  }}</td>
+                    <td>{{ $data->newsletter }}</td>
+                    <td>{{ $data->newsletterdescription }}</td>
+                    <td>{{ $data->copy1 }}</td>
+                    <td>{{ $data->copy2 }}</td>
+                    <td>{{ $data->copy3 }}</td>
+                    <td>{{ $data->credits }}</td>
+                    <td>{{ $data->credits2 }}</td>
                     <td class="d-flex">
-                        <a href="{{ route('contacts.edit', $data->id) }}" class="btn btn-info mx-2">Edit</a>
-                        <a href="{{ route('contacts.show', $data->id) }}" class="btn btn-warning mr-2">Show</a>
+                        <a href="{{ route('footers.edit', $data->id) }}" class="btn btn-info mx-2">Edit</a>
+                        <a href="{{ route('footers.show', $data->id) }}" class="btn btn-warning mr-2">Show</a>
 
-                        <form action="{{ route('contacts.destroy', $data->id) }}" method="post">
+                        <form action="{{ route('footers.destroy', $data->id) }}" method="post">
                             @method('DELETE')
                             @csrf
                             <button class="btn btn-danger mx-2">Delete</button>

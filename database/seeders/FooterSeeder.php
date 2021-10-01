@@ -16,7 +16,7 @@ class FooterSeeder extends Seeder
     {
         DB::table('footers')->insert([
             'nom' => 'Bikin',
-            'adress' => ' A108 Adam Street <br>
+            'adress' => ' A108 Adam Street
             New York, NY 535022',
             'ville' => 'United States',
             'tel' => 'Phone:',
@@ -38,8 +38,8 @@ class FooterSeeder extends Seeder
             'newsletter' => 'Join Our Newsletter',
             'newsletterdescription' => 'Tamen quem nulla quae legam multos aute sint culpa legam noster magna',
             'copy1' => 'Copyright',
-            'copy2' => 'Bikin<',
-            'copy3' => '. All Rights Reserved',
+            'copy2' => 'Bikin',
+            'copy3' => ' All Rights Reserved',
             'credits' => 'Designed by',
             'credits2' => 'BootstrapMade',
         ]);

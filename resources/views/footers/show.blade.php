@@ -2,8 +2,8 @@
 
 @section('content')
     
-<div class="card mt-5 container" style="width: 40rem;">
-    <ul class="list-group list-group-flush text-center">
+<div class="card container" style="width: 40rem;">
+    <ul class="list-group list-group-flush text-center pt-5">
         <li class="list-group-item mt-2 pb-3">{{ $footer->nom }}</li>
         <li class="list-group-item mt-2 pb-3">{{ $footer->adress }}</li>
         <li class="list-group-item mt-2 pb-3">{{ $footer->ville }}</li>

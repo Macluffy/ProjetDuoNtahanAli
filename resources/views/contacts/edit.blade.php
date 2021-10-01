@@ -2,8 +2,8 @@
 @section('content')
     
 
-<h1 class="text-center mt-5">Contact Edit</h1>
-<form class="formulaire container mt-3 d-flex flex-column w-50" action="{{route('contacts.update', $contact->id)}}" enctype="multipart/form-data" method="post">
+<h1 class="text-center back pt-5" style="font-size: 45px">Contact Edit</h1>
+<form class="formulaire container mt-5 d-flex flex-column w-50" action="{{route('contacts.update', $contact->id)}}" enctype="multipart/form-data" method="post">
     @csrf
     Adresse: <input class="mt-2" type="text" value="{{$contact->adress}}" name="adress">
     Rue: <input class="mt-2" type="text" value="{{$contact->rue}}" name="rue">

@@ -2,8 +2,8 @@
 @section('content')
     
 
-<h1 class="text-center mt-5">Footer Edit</h1>
-<form class="formulaire container mt-3 d-flex flex-column w-50" action="{{route('footers.update', $footer->id)}}" enctype="multipart/form-data" method="post">
+<h1 class="text-center pt-5" style="font-size: 45px">Footer Edit</h1>
+<form class="formulaire container mt-5 d-flex flex-column w-50" action="{{route('footers.update', $footer->id)}}" enctype="multipart/form-data" method="post">
     @csrf
     Nom Entreprise: <input class="mt-2" type="text" value="{{$footer->nom}}" name="nom">
     Adresse: <input class="mt-2" type="text" value="{{$footer->adress}}" name="adress">

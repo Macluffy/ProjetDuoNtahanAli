@@ -2,7 +2,7 @@
 @section('content')
     
 
-<h1 class="text-center mt-5">Team Edit</h1>
+<h1 class="text-center back pt-5" style="font-size: 45px">Team Edit</h1>
 <form class="formulaire container mt-3 d-flex flex-column w-50" action="{{route('teams.update', $team->id)}}" enctype="multipart/form-data" method="post">
     @csrf
     Nom Personne: <input class="mt-2" type="text" value="{{$team->nomteam}}" name="nomteam">

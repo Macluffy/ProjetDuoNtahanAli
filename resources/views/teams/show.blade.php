@@ -2,8 +2,8 @@
 
 @section('content')
     
-<div class="card mt-5 container" style="width: 40rem;">
-    <ul class="list-group list-group-flush text-center">
+<div class="card container" style="width: 40rem;">
+    <ul class="list-group list-group-flush text-center pt-5">
         <li class="list-group-item my-3">{{ $team->nomteam }}</li>
         <li class="list-group-item mb-3">{{ $team->titreteam }}</li>
         <li class="list-group-item"><img style="width: 100px; height: 100px;" src="{{ asset($team->imgteam) }}" alt=""></li>

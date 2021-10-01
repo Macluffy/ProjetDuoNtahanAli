@@ -2,7 +2,7 @@
 @section('content')
     
 
-<h1 class="text-center mt-5">Testimonial Edit</h1>
+<h1 class="text-center back pt-5" style="font-size: 45px">Testimonial Edit</h1>
 <form class="formulaire container mt-3 d-flex flex-column w-50" action="{{route('testimonials.update', $testimonial->id)}}" enctype="multipart/form-data" method="post">
     @csrf
     Description Personne: <input class="mt-2" type="text" value="{{$testimonial->personne}}" name="personne">

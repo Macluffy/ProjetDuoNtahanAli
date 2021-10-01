@@ -2,8 +2,8 @@
 
 @section('content')
     
-<div class="card mt-5 container" style="width: 40rem;">
-    <ul class="list-group list-group-flush text-center">
+<div class="card container" style="width: 40rem;">
+    <ul class="list-group list-group-flush text-center pt-5">
         <li class="list-group-item my-3">{{ $contact->adress }}</li>
         <li class="list-group-item mb-3">{{ $contact->rue }}</li>
         <li class="list-group-item">{{ $contact->emailadress }}</li>

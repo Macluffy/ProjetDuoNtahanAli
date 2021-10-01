@@ -4,9 +4,9 @@
 
 
 
-    <div class="container d-flex justify-content-center flex-column mt-5 w-25">
-        <h1 class="text-center">Contact</h1>
-        <a href="{{ route('contacts.create') }}" class="btn btn-success mb-2 mt-2 text-white">Create</a>
+    <div class="container d-flex justify-content-center flex-column pt-5 w-25">
+        <h1 class="text-center back mb-3" style="font-size: 45px">Contact</h1>
+        <a href="{{ route('contacts.create') }}" class="btn btn-success mb-2 text-white">Create</a>
     </div>
 
 

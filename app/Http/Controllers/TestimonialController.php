@@ -71,42 +71,15 @@ class TestimonialController extends Controller
      */
     public function update(Request $request, Testimonial $testimonial)
     {
-        Storage::disk("public")->delete('/img/testimonials'.$testimonial->imgpersonne1);
-        Storage::disk("public")->delete('/img/testimonials'.$testimonial->imgpersonne2);
-        Storage::disk("public")->delete('/img/testimonials'.$testimonial->imgpersonne3);
-        Storage::disk("public")->delete('/img/testimonials'.$testimonial->imgpersonne4);
-        Storage::disk("public")->delete('/img/testimonials'.$testimonial->imgpersonne5);
+        Storage::disk("public")->delete('/img/testimonials'.$testimonial->imgpersonne);
 
-        $testimonial->titre = $request->titre;
-        $testimonial->description = $request->description;
-        $testimonial->icon1 = $request->icon1;
-        $testimonial->personne1 = $request->personne1;
-        $testimonial->icon2 = $request->icon2;
-        $testimonial->imgpersonne1 = $request->file("url")->hashName();
-        $testimonial->nompersonne1 = $request->nompersonne1;
-        $testimonial->statutpersonne1 = $request->statutpersonne1;
+        
+        $testimonial->personne = $request->personne;
+        $testimonial->imgpersonne = $request->file("url")->hashName();
+        $testimonial->nompersonne = $request->nompersonne;
+        $testimonial->statutpersonne = $request->statutpersonne;
 
-        $testimonial->personne2 = $request->personne2;
-        $testimonial->imgpersonne2 = $request->file("url")->hashName();
-        $testimonial->nompersonne2 = $request->nompersonne2;
-        $testimonial->statutpersonne2 = $request->statutpersonne2;
-
-        $testimonial->personne3 = $request->personne3;
-        $testimonial->imgpersonne3 = $request->file("url")->hashName();
-        $testimonial->nompersonne3 = $request->nompersonne3;
-        $testimonial->statutpersonne3 = $request->statutpersonne3;
-
-        $testimonial->personne4 = $request->personne4;
-        $testimonial->imgpersonne4 = $request->file("url")->hashName();
-        $testimonial->nompersonne4 = $request->nompersonne4;
-        $testimonial->statutpersonne4 = $request->statutpersonne4;
-
-        $testimonial->personne5 = $request->personne5;
-        $testimonial->imgpersonne5 = $request->file("url")->hashName();
-        $testimonial->nompersonne5 = $request->nompersonne5;
-        $testimonial->statutpersonne5 = $request->statutpersonne5;
-
-        $request->save();
+        $testimonial->save();
         return redirect()->route('testimonials.index');
     }
 

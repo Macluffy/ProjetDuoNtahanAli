@@ -24,7 +24,6 @@ class FooterSeeder extends Seeder
             'email' => 'Email:',
             'emailadress' => 'info@example.com',
             'links' => 'Useful Links',
-            'icon1' => 'bx bx-chevron-right',
             'link1' => 'Home',
             'link2' => 'About us',
             'link3' => 'Services',
@@ -43,11 +42,6 @@ class FooterSeeder extends Seeder
             'copy3' => '. All Rights Reserved',
             'credits' => 'Designed by',
             'credits2' => 'BootstrapMade',
-            'icontwitter' => 'bx bxl-twitter',
-            'iconfb' => 'bx bxl-facebook',
-            'iconinsta' => 'bx bxl-instagram',
-            'icongoogleplus' => 'bx bxl-google-plus',
-            'iconlinkedin' => 'bx bxl-linkedin',
         ]);
     }
 }

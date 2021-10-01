@@ -23,7 +23,6 @@ class CreateFootersTable extends Migration
             $table->string('email');
             $table->string('emailadress');
             $table->string('links');
-            $table->string('icon1');
             $table->string('link1');
             $table->string('link2');
             $table->string('link3');
@@ -42,11 +41,6 @@ class CreateFootersTable extends Migration
             $table->string('copy3');
             $table->string('credits');
             $table->string('credits2');
-            $table->string('icontwitter');
-            $table->string('iconfb');
-            $table->string('iconinsta');
-            $table->string('icongoogleplus');
-            $table->string('iconlinkedin');
             $table->timestamps();
         });
     }

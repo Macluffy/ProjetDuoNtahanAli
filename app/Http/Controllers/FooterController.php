@@ -78,7 +78,6 @@ class FooterController extends Controller
         $footer->email = $request->email;
         $footer->emailadress = $request->emailadress;
         $footer->links = $request->links;
-        $footer->icon1 = $request->icon1;
         $footer->link1 = $request->link1;
         $footer->link2 = $request->link2;
         $footer->link3 = $request->link3;
@@ -96,13 +95,8 @@ class FooterController extends Controller
         $footer->copy2 = $request->copy2;
         $footer->copy3 = $request->copy3;
         $footer->credits = $request->credits;
-        $footer->icontwitter = $request->icontwitter;
-        $footer->iconfb = $request->iconfb;
-        $footer->iconinsta = $request->iconinsta;
-        $footer->icongoogleplus = $request->icongoogleplus;
-        $footer->iconlinkedin = $request->iconlinkedin;
 
-        $request->save();
+        $footer->save();
         return redirect()->route('footers.index');
     }
 

@@ -70,17 +70,10 @@ class ContactController extends Controller
      */
     public function update(Request $request, Contact $contact)
     {
-        $contact->titre = $request->titre;
-        $contact->description = $request->description;
-        $contact->icon1 = $request->icon1;
         $contact->adress = $request->adress;
         $contact->rue = $request->rue;
-        $contact->icon2 = $request->icon2;
-        $contact->emailtitre = $request->emailtitre;
         $contact->emailadress = $request->emailadress;
         $contact->contactadress = $request->contactadress;
-        $contact->icon3 = $request->icon3;
-        $contact->callus = $request->callus;
         $contact->number1 = $request->number1;
         $contact->number2 = $request->number2;
 

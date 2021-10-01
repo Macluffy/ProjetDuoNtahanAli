@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Team;
+use App\Models\Titre;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
-class TeamController extends Controller
+class TitreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +13,9 @@ class TeamController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $team = Team::all();
-        return view('teams.index', compact('team'));
+    {   
+        $titre =  Titre::all();
+        return view('titres.index', compact('titre'));
     }
 
     /**
@@ -43,55 +42,57 @@ class TeamController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Team  $team
+     * @param  \App\Models\Titre  $titre
      * @return \Illuminate\Http\Response
      */
-    public function show(Team $team)
+    public function show(Titre $titre)
     {
-        return view('teams.show', compact('team'));
+        return view('titres.show', compact('titre'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Team  $team
+     * @param  \App\Models\Titre  $titre
      * @return \Illuminate\Http\Response
      */
-    public function edit(Team $team)
+    public function edit(Titre $titre)
     {
-        return view('teams.edit', compact('team'));
+        return view('titres.edit', compact('titre'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Team  $team
+     * @param  \App\Models\Titre  $titre
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Team $team)
+    public function update(Request $request, Titre $titre)
     {
-        Storage::disk("public")->delete("/img/team".$team->imgteam);
+        $titre->titre3 = $request->titre3;
+        $titre->soustitre3 = $request->soustitre3;
+        $titre->titre4 = $request->titre4;
+        $titre->soustitre4 = $request->soustitre4;
+        $titre->titre5 = $request->titre5;
+        $titre->soustitre5 = $request->soustitre5;
+        $titre->titre6 = $request->titre6;
+        $titre->soustitre6 = $request->soustitre6;
 
-        $team->imgteam = $request->file('url')->hashName();
-        $team->nomteam = $request->nomteam;
-        $team->titreteam = $request->titreteam;
+        $titre->save();
 
-        $team->save();
-        return redirect()->route('teams.index');
+        return redirect()->route('titres.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Team  $team
+     * @param  \App\Models\Titre  $titre
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Team $team)
+    public function destroy(Titre $titre)
     {
-        Storage::disk("public")->delete("/img/team".$team->imgteam);
-
-        $team->delete();
-        return redirect()->route('teams.index');
+        $titre->delete();
+        return redirect()->route("titres.index");
     }
 }

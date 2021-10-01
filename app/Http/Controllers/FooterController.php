@@ -72,6 +72,7 @@ class FooterController extends Controller
     {
         $footer->nom = $request->nom;
         $footer->adress = $request->adress;
+        $footer->adress2 = $request->adress2;
         $footer->ville = $request->ville;
         $footer->tel = $request->tel;
         $footer->numtel = $request->numtel;

@@ -106,9 +106,14 @@
             </li>
         </ul>
     </div>
+
+
     <section class="home-section">
         @yield('content')
     </section>
+
+
+    
     <script>
         let sidebar = document.querySelector(".sidebar");
         let closeBtn = document.querySelector("#btn");

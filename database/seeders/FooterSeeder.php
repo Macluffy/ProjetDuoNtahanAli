@@ -16,8 +16,8 @@ class FooterSeeder extends Seeder
     {
         DB::table('footers')->insert([
             'nom' => 'Bikin',
-            'adress' => ' A108 Adam Street
-            New York, NY 535022',
+            'adress' => ' A108 Adam Street',
+            'adress2' => 'New York, NY 535022',
             'ville' => 'United States',
             'tel' => 'Phone:',
             'numtel' => '+1 5589 55488 55',

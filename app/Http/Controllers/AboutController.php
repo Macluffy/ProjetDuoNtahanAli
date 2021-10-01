@@ -14,7 +14,7 @@ class AboutController extends Controller
      */
     public function index()
     {
-        return view('pages.index');
+        return view('about.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class AboutController extends Controller
     public function create()
     {
         $data = About::all();
-        return view('pages.about.create',compact('data'));
+        return view('about.create',compact('data'));
     }
 
     /**
@@ -86,7 +86,7 @@ class AboutController extends Controller
      */
     public function show(About $about)
     {
-        return view('pages.about.show',compact('about'));
+        return view('about.show',compact('about'));
     }
 
     /**
@@ -97,7 +97,7 @@ class AboutController extends Controller
      */
     public function edit(About $about)
     {
-        return view('pages.about.show',compact('about'));
+        return view('about.show',compact('about'));
     }
 
     /**
@@ -162,6 +162,6 @@ class AboutController extends Controller
         // $this->authorize("delete",$about);
 
         $about->delete();
-        return redirect()->route('abouts.index');
+        return redirect()->route('about.index');
     }
 }

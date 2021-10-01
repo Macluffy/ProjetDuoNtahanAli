@@ -14,7 +14,7 @@ class HeaderController extends Controller
      */
     public function index()
     {
-        return view('pages.index');
+        return view('header.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class HeaderController extends Controller
     public function create()
     {
         $data = Header::all();
-        return view('pages.header.create',compact('data'));
+        return view('header.create',compact('data'));
     }
 
     /**
@@ -78,7 +78,7 @@ class HeaderController extends Controller
      */
     public function show(Header $header)
     {
-        return view('pages.header.show',compact('header'));
+        return view('header.show',compact('header'));
     }
 
     /**
@@ -89,7 +89,7 @@ class HeaderController extends Controller
      */
     public function edit(Header $header)
     {
-        return view('pages.header.edit',compact('header'));
+        return view('header.edit',compact('header'));
 
     }
 
@@ -144,6 +144,6 @@ class HeaderController extends Controller
         // $this->authorize("delete",$header);
 
         $header->delete();
-        return redirect()->route('portfolios.index');
+        return redirect()->route('portfolio.index');
     }
 }

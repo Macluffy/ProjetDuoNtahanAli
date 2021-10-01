@@ -17,6 +17,7 @@ class CreateFootersTable extends Migration
             $table->id();
             $table->string('nom');
             $table->string('adress');
+            $table->string('adress2');
             $table->string('ville');
             $table->string('tel');
             $table->string('numtel');

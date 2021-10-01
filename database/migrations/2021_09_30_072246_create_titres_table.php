@@ -15,14 +15,8 @@ class CreateTitresTable extends Migration
     {
         Schema::create('titres', function (Blueprint $table) {
             $table->id();
-            $table->string('titre3');
-            $table->text('soustitre3');
-            $table->string('titre4');
-            $table->text('soustitre4');
-            $table->string('titre5');
-            $table->text('soustitre5');
-            $table->string('titre6');
-            $table->text('soustitre6');
+            $table->string('titre');
+            $table->text('paragraphe');
             $table->timestamps();
         });
     }

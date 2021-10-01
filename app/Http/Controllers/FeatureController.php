@@ -15,7 +15,7 @@ class FeatureController extends Controller
      */
     public function index()
     {
-        return view('pages.index');
+        return view('feature.index');
     }
 
     /**
@@ -26,7 +26,7 @@ class FeatureController extends Controller
     public function create()
     {
         $data = Feature::all();
-        return view('pages.feature.create',compact('data'));
+        return view('feature.create',compact('data'));
     }
 
     /**
@@ -76,7 +76,7 @@ class FeatureController extends Controller
      */
     public function show(Feature $feature)
     {
-        return view('pages.feature.show',compact('feature'));
+        return view('feature.show',compact('feature'));
 
     }
 
@@ -88,7 +88,7 @@ class FeatureController extends Controller
      */
     public function edit(Feature $feature)
     {
-        return view('pages.feature.edit',compact('feature'));
+        return view('feature.edit',compact('feature'));
 
     }
 
@@ -145,7 +145,7 @@ class FeatureController extends Controller
         // Storage::disk('public')->delete('img/'. $feature->img);
         Storage::disk('public')->delete('img/'. $feature->img);
         $feature->delete();
-        return redirect()->route('features.index');
+        return redirect()->route('feature.index');
     }
     
 }

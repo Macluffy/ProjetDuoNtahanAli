@@ -5,8 +5,8 @@
     <div class="container" data-aos="fade-up">
         
         <div class="section-title">
-            <h2>{{ $data7[0]->titre }}</h2>
-            <p>{{ $data7[0]->paragraphe }}</p>
+            <h2>{{ $data7[2]->titre }}</h2>
+            <p>{{ $data7[2]->paragraphe }}</p>
         </div>
         
         <div class="row">

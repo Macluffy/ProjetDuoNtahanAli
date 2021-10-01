@@ -1,5 +1,13 @@
 <?php
 
+use App\Http\Controllers\AboutbtnController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\FeatureController;
+use App\Http\Controllers\HeaderController;
+use App\Http\Controllers\HeroController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TitreController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +21,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/index', function () {
-    return view('pages.index');
-});
+
+Route::get('/', [HomeController::class,'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -25,10 +32,14 @@ require __DIR__.'/auth.php';
 
 Route::resource('header', HeaderController::class);
 
-Route::resource('hero', heroController::class);
+Route::resource('hero', HeroController::class);
 
 Route::resource('about', AboutController::class);
 
 Route::resource('feature', FeatureController::class);
 
-Route::resource('Service', ServiceController::class);
+Route::resource('service', ServiceController::class);
+
+Route::resource('aboutbtn', AboutbtnController::class);
+
+Route::resource('titre', TitreController::class);

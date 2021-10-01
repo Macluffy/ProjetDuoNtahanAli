@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Feature;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class FeatureController extends Controller
 {
@@ -25,7 +26,7 @@ class FeatureController extends Controller
     public function create()
     {
         $data = Feature::all();
-        return view('backoffice.backofficefeature.create',compact('data'));
+        return view('pages.feature.create',compact('data'));
     }
 
     /**
@@ -38,8 +39,7 @@ class FeatureController extends Controller
     {
         // $this->authorize("create",feature::class);
         request()->validate([
-            "titre"=>["required","min:1" , "max:200" ],
-            "paragraphe"=>["required","min:1" , "max:200" ],
+            
             "img1"=>["required","min:1" , "max:200" ],
             "petittitre1"=>["required","min:1" , "max:200" ],
             "petitparagraphe1"=>["required","min:1" , "max:200" ],
@@ -47,48 +47,22 @@ class FeatureController extends Controller
             "phrase1"=>["required","min:1" , "max:200" ],
             "phrase2"=>["required","min:1" , "max:200" ],
             "phrase3"=>["required","min:1" , "max:200" ],
-            "img2"=>["required","min:1" , "max:200" ],
-            "petittitre2"=>["required","min:1" , "max:200" ],
-            "petitparagraphe2"=>["required","min:1" , "max:200" ],
-            "grosparagraphe2"=>["required","min:1" , "max:200" ],
-            "img3"=>["required","min:1" , "max:200" ],
-            "petittitre3"=>["required","min:1" , "max:200" ],
-            "petitparagraphe3"=>["required","min:1" , "max:200" ],
-            "phrase4"=>["required","min:1" , "max:200" ],
-            "phrase5"=>["required","min:1" , "max:200" ],
-            "phrase6"=>["required","min:1" , "max:200" ],
-            "img4"=>["required","min:1" , "max:200" ],
-            "petittitre4"=>["required","min:1" , "max:200" ],
-            "petitparagraphe4"=>["required","min:1" , "max:00" ],
-            "grosparagraphe4"=>["required","min:1" , "max:200" ],
+            
 
         ]);
 
         $data = new Feature();
-        $data->titre = $request->titre;
-        $data->paragraphe = $request->paragraphe;
-        $data->img1 = $request->img1;
+        
+        $data->img1 =  $request->file('image')->hashName();
         $data->petittitre1 = $request->petittitre1;
         $data->petitparagraphe1 = $request->petittitre1;
         $data->icon1 = $request->icon1;
         $data->phrase1 = $request->phrase1;
         $data->phrase2 = $request->phrase2;
         $data->phrase3 = $request->phrase3;
-        $data->img2 = $request->img2;
-        $data->petittitre2 = $request->petittitre2;
-        $data->petitparagraphe2 = $request->petitparagraphe2;
-        $data->grosparagraphe2 = $request->grosparagraphe2;
-        $data->img3 = $request->img3;
-        $data->petittitre3 = $request->petittitre3;
-        $data->petitparagraphe3 = $request->petitparagraphe3;
-        $data->phrase4 = $request->phrase4;
-        $data->phrase5 = $request->phrase5;
-        $data->phrase6 = $request->phrase6;
-        $data->img4 = $request->img4;
-        $data->petittitre4 = $request->petittitre4;
-        $data->petitparagraphe4 = $request->petitparagraphe4;
-        $data->grosparagraphe4 = $request->grosparagraphe4;
+        
         $data->save();
+        $request->file('image')->storePublicly('img','public');
         
 
         return redirect()->route('index');
@@ -102,7 +76,7 @@ class FeatureController extends Controller
      */
     public function show(Feature $feature)
     {
-        return view('backoffice.backofficefeature.show',compact('feature'));
+        return view('pages.feature.show',compact('feature'));
 
     }
 
@@ -114,7 +88,7 @@ class FeatureController extends Controller
      */
     public function edit(Feature $feature)
     {
-        return view('backoffice.backofficefeature.edit',compact('feature'));
+        return view('pages.feature.edit',compact('feature'));
 
     }
 
@@ -129,8 +103,7 @@ class FeatureController extends Controller
     {
         // $this->authorize("create",feature::class);
         request()->validate([
-            "titre"=>["required","min:1" , "max:200" ],
-            "paragraphe"=>["required","min:1" , "max:200" ],
+            
             "img1"=>["required","min:1" , "max:200" ],
             "petittitre1"=>["required","min:1" , "max:200" ],
             "petitparagraphe1"=>["required","min:1" , "max:200" ],
@@ -138,48 +111,22 @@ class FeatureController extends Controller
             "phrase1"=>["required","min:1" , "max:200" ],
             "phrase2"=>["required","min:1" , "max:200" ],
             "phrase3"=>["required","min:1" , "max:200" ],
-            "img2"=>["required","min:1" , "max:200" ],
-            "petittitre2"=>["required","min:1" , "max:200" ],
-            "petitparagraphe2"=>["required","min:1" , "max:200" ],
-            "grosparagraphe2"=>["required","min:1" , "max:200" ],
-            "img3"=>["required","min:1" , "max:200" ],
-            "petittitre3"=>["required","min:1" , "max:200" ],
-            "petitparagraphe3"=>["required","min:1" , "max:200" ],
-            "phrase4"=>["required","min:1" , "max:200" ],
-            "phrase5"=>["required","min:1" , "max:200" ],
-            "phrase6"=>["required","min:1" , "max:200" ],
-            "img4"=>["required","min:1" , "max:200" ],
-            "petittitre4"=>["required","min:1" , "max:200" ],
-            "petitparagraphe4"=>["required","min:1" , "max:00" ],
-            "grosparagraphe4"=>["required","min:1" , "max:200" ],
-
+            
         ]);
 
         
-        $feature->titre = $request->titre;
-        $feature->paragraphe = $request->paragraphe;
-        $feature->img1 = $request->img1;
+        
+       
+        $feature->img1 = $request->file('image')->hashName();
         $feature->petittitre1 = $request->petittitre1;
         $feature->petitparagraphe1 = $request->petittitre1;
         $feature->icon1 = $request->icon1;
         $feature->phrase1 = $request->phrase1;
         $feature->phrase2 = $request->phrase2;
         $feature->phrase3 = $request->phrase3;
-        $feature->img2 = $request->img2;
-        $feature->petittitre2 = $request->petittitre2;
-        $feature->petitparagraphe2 = $request->petitparagraphe2;
-        $feature->grosparagraphe2 = $request->grosparagraphe2;
-        $feature->img3 = $request->img3;
-        $feature->petittitre3 = $request->petittitre3;
-        $feature->petitparagraphe3 = $request->petitparagraphe3;
-        $feature->phrase4 = $request->phrase4;
-        $feature->phrase5 = $request->phrase5;
-        $feature->phrase6 = $request->phrase6;
-        $feature->img4 = $request->img4;
-        $feature->petittitre4 = $request->petittitre4;
-        $feature->petitparagraphe4 = $request->petitparagraphe4;
-        $feature->grosparagraphe4 = $request->grosparagraphe4;
         $feature->save();
+        $request->file('image')->storePublicly('img','public');
+        Storage::disk('public')->delete('img/'. $feature->img);
         
 
         return redirect()->route('index');
@@ -196,6 +143,7 @@ class FeatureController extends Controller
         // $this->authorize("delete",$feature);
         
         // Storage::disk('public')->delete('img/'. $feature->img);
+        Storage::disk('public')->delete('img/'. $feature->img);
         $feature->delete();
         return redirect()->route('features.index');
     }

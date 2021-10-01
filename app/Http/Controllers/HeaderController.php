@@ -25,7 +25,7 @@ class HeaderController extends Controller
     public function create()
     {
         $data = Header::all();
-        return view('backoffice.backofficeheader.create',compact('data'));
+        return view('pages.header.create',compact('data'));
     }
 
     /**
@@ -78,7 +78,7 @@ class HeaderController extends Controller
      */
     public function show(Header $header)
     {
-        return view('backoffice.backofficeheader.show',compact('header'));
+        return view('pages.header.show',compact('header'));
     }
 
     /**
@@ -89,7 +89,7 @@ class HeaderController extends Controller
      */
     public function edit(Header $header)
     {
-        return view('backoffice.backofficeheader.edit',compact('header'));
+        return view('pages.header.edit',compact('header'));
 
     }
 

@@ -14,7 +14,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.index');
     }
 
     /**
@@ -24,7 +24,8 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        $data = Service::all();
+        return view('pages.service.create',compact('data'));
     }
 
     /**
@@ -35,7 +36,26 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $this->authorize("create",service::class);
+        request()->validate([
+            
+            "icon1"=>["required","min:1" , "max:200" ],
+            "link1"=>["required","min:1" , "max:200" ],
+            "paragraphelink1"=>["required","min:1" , "max:200" ],
+           
+
+        ]);
+
+        $data = new Service();
+       
+        $data->icon1 = $request->icon1;
+        $data->link1 = $request->link1;
+        $data->paragraphelink1 = $request->paragraphelink1;
+        
+        $data->save();
+        
+
+        return redirect()->route('index');
     }
 
     /**
@@ -46,7 +66,7 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        //
+        return view('pages.service.show',compact('service'));
     }
 
     /**
@@ -57,7 +77,7 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        //
+        return view('pages.service.edit',compact('service'));
     }
 
     /**
@@ -69,7 +89,25 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
-        //
+        // $this->authorize("create",service::class);
+        request()->validate([
+            
+            "icon1"=>["required","min:1" , "max:200" ],
+            "link1"=>["required","min:1" , "max:200" ],
+            "paragraphelink1"=>["required","min:1" , "max:200" ],
+           
+
+        ]);
+
+       
+        $service->icon1 = $request->icon1;
+        $service->link1 = $request->link1;
+        $service->paragraphelink1 = $request->paragraphelink1;
+        
+        $service->save();
+        
+
+        return redirect()->route('index');
     }
 
     /**
@@ -80,6 +118,9 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        //
+        // $this->authorize("delete",$service);
+
+        $service->delete();
+        return redirect()->route('services.index');
     }
 }

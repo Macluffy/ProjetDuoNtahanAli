@@ -19,7 +19,10 @@ class DatabaseSeeder extends Seeder
             HeroSeeder::class,
             AboutSeeder::class,
             FeatureSeeder::class,
-            ServicesSeeder::class,
+            ServiceSeeder::class,
+            TitreSeeder::class,
+            AboutbtnSeeder::class,
+
         ]);
             
         

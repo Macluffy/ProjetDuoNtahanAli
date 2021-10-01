@@ -16,7 +16,7 @@ class HeaderSeeder extends Seeder
     {
         DB::table('headers')->insert([
             [
-                "tirenav"=>"Bikin",
+                "titrenav"=>"Bikin",
                 "link1nav"=>"Home",
                 "link2nav"=>"About",
                 "link3nav"=>"Services",

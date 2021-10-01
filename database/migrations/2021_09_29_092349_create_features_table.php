@@ -15,36 +15,16 @@ class CreateFeaturesTable extends Migration
     {
         Schema::create('features', function (Blueprint $table) {
             $table->id();
-            $table->string('titre');
-            $table->string('paragraphe');
+            
             $table->string('img1');
             $table->string('petittitre1');
-            $table->string('petitparagraphe1');
-            $table->string('icon1');
-            $table->string('phrase1');
-            
-            $table->string('phrase2');
-            
-            $table->string('phrase3');
-            $table->string('img2');
-            $table->string('petittitre2');
-            $table->string('petitparagraphe2');
-            $table->string('grosparagraphe2');
-            $table->string('img3');
-            $table->string('petittitre3');
-            $table->string('petitparagraphe3');
-            
-            $table->string('phrase4');
-            
-            $table->string('phrase5');
-            
-            $table->string('phrase6');
-            $table->string('img4');
-            $table->string('petittitre4');
-            $table->string('petitparagraphe4');
-            $table->string('grosparagraphe4');
-
-            
+            $table->text('petitparagraphe1');
+            $table->string('icon1')->nullable();
+            $table->text('phrase1');
+            $table->string('icon2')->nullable();
+            $table->text('phrase2');
+            $table->string('icon3')->nullable();
+            $table->text('phrase3');
 
             $table->timestamps();
         });

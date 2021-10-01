@@ -14,7 +14,7 @@ class HeroSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('heros')->insert([
+        DB::table('heroes')->insert([
             [
                 "titre"=>"Build Better Websites With Bikin",
                 "soustitre"=>"We are team of talented designers making websites with Bootstrap",

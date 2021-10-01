@@ -25,7 +25,7 @@ class AboutController extends Controller
     public function create()
     {
         $data = About::all();
-        return view('backoffice.backofficeabout.create',compact('data'));
+        return view('pages.about.create',compact('data'));
     }
 
     /**
@@ -86,7 +86,7 @@ class AboutController extends Controller
      */
     public function show(About $about)
     {
-        return view('backoffice.backofficeabout.show',compact('about'));
+        return view('pages.about.show',compact('about'));
     }
 
     /**
@@ -97,7 +97,7 @@ class AboutController extends Controller
      */
     public function edit(About $about)
     {
-        return view('backoffice.backofficeabout.show',compact('about'));
+        return view('pages.about.show',compact('about'));
     }
 
     /**

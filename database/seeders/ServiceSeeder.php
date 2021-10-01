@@ -16,18 +16,25 @@ class ServiceSeeder extends Seeder
     {
         DB::table('services')->insert([
             [
-                "titre"=>"Services",
-                "paragraphe"=>"Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.",
                 "icon1"=>"bx bxl-dribbble",
                 "link1"=>"Lorem Ipsum",
-                "paragraphelink1"=>"Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi",
-                "icon2"=>"bx bx-file",
-                "link2"=>"Sed ut perspiciatis",
-                "paragraphelink2"=>"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
-                "icon3"=>"bx bx-tachometer",
-                "link3"=>"Magni Dolores",
-                "paragraphelink3"=>"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia",
-            ]
+                "paragraphelink1"=>"Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi"
+            ],
+            [
+                "icon1"=>"bx bx-file",
+                "link1"=>"Sed ut perspiciatis",
+                "paragraphelink1"=>"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore"
+            ],
+            [
+                "icon1"=>"bx bx-tachometer",
+                "link1"=>"Magni Dolores",
+                "paragraphelink1"=>"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia"
+            ],
+            [
+                "icon1"=>"bx bx-layer",
+                "link1"=>"Nemo Enim",
+                "paragraphelink1"=>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis"
+            ],
             ]);
     }
 }

@@ -24,8 +24,8 @@ class CreateHeadersTable extends Migration
             $table->string('link6nav');
             $table->string('btnstartnav');
             $table->string('login');
-            $table->string('dashboard');
             $table->string('register');
+            $table->string('dashboard');
             
             $table->timestamps();
         });

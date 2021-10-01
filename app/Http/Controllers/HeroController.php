@@ -26,7 +26,7 @@ class HeroController extends Controller
     public function create()
     {
         $data = Hero::all();
-        return view('backoffice.backofficehero.create',compact('data'));
+        return view('pages.hero.create',compact('data'));
     }
 
     /**
@@ -67,7 +67,7 @@ class HeroController extends Controller
      */
     public function show(Hero $hero)
     {
-        return view('backoffice.backofficehero.show',compact('hero'));
+        return view('pages.hero.show',compact('hero'));
     }
 
     /**
@@ -78,7 +78,7 @@ class HeroController extends Controller
      */
     public function edit(Hero $hero)
     {
-        return view('backoffice.backofficehero.edit',compact('hero'));
+        return view('pages.hero.edit',compact('hero'));
 
     }
 
@@ -120,7 +120,7 @@ class HeroController extends Controller
      */
     public function destroy(Hero $hero)
     {
-        $this->authorize("delete",$hero);
+        // $this->authorize("delete",$hero);
         
         Storage::disk('public')->delete('img/'. $hero->img);
         $hero->delete();

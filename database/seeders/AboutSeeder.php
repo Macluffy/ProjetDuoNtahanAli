@@ -16,23 +16,29 @@ class AboutSeeder extends Seeder
     {
         DB::table('abouts')->insert([
             [
-                "titre"=>"Voluptatem dignissimos provident quasi",
-                "paragraphe"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit",
-                "link"=>"About us",
+               
+                
                 "icon1"=>"bx bx-receipt",
                 "petittitre1"=>"Corporis voluptates sit",
                 "petitparagraphe1"=>"Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip",
-                "icon2"=>"bx bx-cube-alt",
-                "petittitre2"=>"Ullamco laboris nisi",
-                "petitparagraphe2"=>"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt",
-                "icon3"=>"bx bx-images",
-                "petittitre3"=>"Labore consequatur",
-                "petitparagraphe3"=>"Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere",
-                "icon4"=>"bx bx-shield",
-                "petittitre4"=>"Beatae veritatis",
-                "petitparagraphe4"=>"Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta"
 
-            ]
+            ],
+            [
+                "icon1"=>"bx bx-cube-alt",
+                "petittitre1"=>"Ullamco laboris nisi",
+                "petitparagraphe1"=>"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt",
+            ],
+            [
+                "icon1"=>"bx bx-images",
+                "petittitre1"=>"Labore consequatur",
+                "petitparagraphe1"=>"Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere",
+            ],
+            [
+                "icon1"=>"bx bx-shield",
+                "petittitre1"=>"Beatae veritatis",
+                "petitparagraphe1"=>"Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta"
+            ],
+
         ]);
     }
 }

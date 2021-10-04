@@ -14,7 +14,7 @@ class AboutbtnController extends Controller
      */
     public function index()
     {
-        
+        return view('about.index');
     }
 
     /**
@@ -24,7 +24,8 @@ class AboutbtnController extends Controller
      */
     public function create()
     {
-        
+        $data = Aboutbtn::all();
+        return view('aboutbtn.create',compact('data'));
     }
 
     /**

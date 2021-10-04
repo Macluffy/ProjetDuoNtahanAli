@@ -3,8 +3,8 @@
     <div class="container">
 
         <div class="section-title">
-            <h2>{{ $data7[0]->titre }}</h2>
-            <p>{{ $data7[0]->paragraphe }}</p>
+            <h2>{{ $data7[1]->titre }}</h2>
+            <p>{{ $data7[1]->paragraphe }}</p>
         </div>
         @php
             $i = 1;

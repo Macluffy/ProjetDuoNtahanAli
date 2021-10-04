@@ -3,8 +3,8 @@
     <div class="container" data-aos="fade-up">
         
         <div class="section-title">
-            <h2>Portfolio</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            <h2>{{ $data7[3]->titre }}</h2>
+            <p>{{ $data7[3]->paragraphe }}</p>
         </div>
         
         <div class="row">
@@ -22,12 +22,12 @@
             
             <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                 <div class="portfolio-wrap">
-                    <img src="{{asset('/img/portfolio/portfolio-1.jpg')}}" class="img-fluid" alt="">
+                    <img src="{{asset($portfolio[0]->img)}}" class="img-fluid" alt="">
                     <div class="portfolio-info">
-                        <h4>App 1</h4>
-                        <p>App</p>
+                        <h4>{{$portfolio[0]->titreimg}}</h4>
+                        <p>{{$portfolio[0]->categorie}}</p>
                         <div class="portfolio-links">
-                            <a href="{{asset('/img/portfolio/portfolio-1.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                            <a href="{{asset($portfolio[0]->img)}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{$portfolio[0]->titreimg}}"><i class="bx bx-plus"></i></a>
                             <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
@@ -36,12 +36,12 @@
             
             <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                 <div class="portfolio-wrap">
-                    <img src="{{asset('/img/portfolio/portfolio-2.jpg')}}" class="img-fluid" alt="">
+                    <img src="{{asset($portfolio[1]->img)}}" class="img-fluid" alt="">
                     <div class="portfolio-info">
-                        <h4>Web 3</h4>
-                        <p>Web</p>
+                        <h4>{{$portfolio[1]->titreimg}}</h4>
+                        <p>{{$portfolio[1]->categorie}}</p>
                         <div class="portfolio-links">
-                            <a href="{{asset('/img/portfolio/portfolio-2.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                            <a href="{{asset($portfolio[1]->img)}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{$portfolio[1]->titreimg}}"><i class="bx bx-plus"></i></a>
                             <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
@@ -50,12 +50,12 @@
             
             <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                 <div class="portfolio-wrap">
-                    <img src="{{asset('/img/portfolio/portfolio-3.jpg')}}" class="img-fluid" alt="">
+                    <img src="{{asset($portfolio[2]->img)}}" class="img-fluid" alt="">
                     <div class="portfolio-info">
-                        <h4>App 2</h4>
-                        <p>App</p>
+                        <h4>{{$portfolio[2]->titreimg}}</h4>
+                        <p>{{$portfolio[2]->categorie}}</p>
                         <div class="portfolio-links">
-                            <a href="{{asset('/img/portfolio/portfolio-3.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
+                            <a href="{{asset($portfolio[2]->img)}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{$portfolio[2]->titreimg}}"><i class="bx bx-plus"></i></a>
                             <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
@@ -64,12 +64,12 @@
             
             <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                 <div class="portfolio-wrap">
-                    <img src="{{asset('/img/portfolio/portfolio-4.jpg')}}" class="img-fluid" alt="">
+                    <img src="{{asset($portfolio[3]->img)}}" class="img-fluid" alt="">
                     <div class="portfolio-info">
-                        <h4>Card 2</h4>
-                        <p>Card</p>
+                        <h4>{{$portfolio[3]->titreimg}}</h4>
+                        <p>{{$portfolio[3]->categorie}}</p>
                         <div class="portfolio-links">
-                            <a href="{{asset('/img/portfolio/portfolio-4.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
+                            <a href="{{asset($portfolio[3]->img)}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{$portfolio[3]->titreimg}}"><i class="bx bx-plus"></i></a>
                             <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
@@ -78,12 +78,12 @@
             
             <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                 <div class="portfolio-wrap">
-                    <img src="{{asset('/img/portfolio/portfolio-5.jpg')}}" class="img-fluid" alt="">
+                    <img src="{{asset($portfolio[4]->img)}}" class="img-fluid" alt="">
                     <div class="portfolio-info">
-                        <h4>Web 2</h4>
-                        <p>Web</p>
+                        <h4>{{$portfolio[4]->titreimg}}</h4>
+                        <p>{{$portfolio[4]->categorie}}</p>
                         <div class="portfolio-links">
-                            <a href="{{asset('/img/portfolio/portfolio-5.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
+                            <a href="{{asset($portfolio[4]->img)}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{$portfolio[4]->titreimg}}"><i class="bx bx-plus"></i></a>
                             <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
@@ -92,12 +92,12 @@
             
             <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                 <div class="portfolio-wrap">
-                    <img src="{{asset('/img/portfolio/portfolio-6.jpg')}}" class="img-fluid" alt="">
+                    <img src="{{asset($portfolio[5]->img)}}" class="img-fluid" alt="">
                     <div class="portfolio-info">
-                        <h4>App 3</h4>
-                        <p>App</p>
+                        <h4>{{$portfolio[5]->titreimg}}</h4>
+                        <p>{{$portfolio[5]->categorie}}</p>
                         <div class="portfolio-links">
-                            <a href="{{asset('/img/portfolio/portfolio-6.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
+                            <a href="{{asset($portfolio[5]->img)}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{$portfolio[5]->titreimg}}"><i class="bx bx-plus"></i></a>
                             <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
@@ -106,12 +106,12 @@
             
             <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                 <div class="portfolio-wrap">
-                    <img src="{{asset('/img/portfolio/portfolio-7.jpg')}}" class="img-fluid" alt="">
+                    <img src="{{asset($portfolio[6]->img)}}" class="img-fluid" alt="">
                     <div class="portfolio-info">
-                        <h4>Card 1</h4>
-                        <p>Card</p>
+                        <h4>{{$portfolio[6]->titreimg}}</h4>
+                        <p>{{$portfolio[6]->categorie}}</p>
                         <div class="portfolio-links">
-                            <a href="{{asset('/img/portfolio/portfolio-7.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
+                            <a href="{{asset($portfolio[6]->img)}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{$portfolio[6]->titreimg}}"><i class="bx bx-plus"></i></a>
                             <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
@@ -120,12 +120,12 @@
             
             <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                 <div class="portfolio-wrap">
-                    <img src="{{asset('/img/portfolio/portfolio-8.jpg')}}" class="img-fluid" alt="">
+                    <img src="{{asset($portfolio[7]->img)}}" class="img-fluid" alt="">
                     <div class="portfolio-info">
-                        <h4>Card 3</h4>
-                        <p>Card</p>
+                        <h4>{{$portfolio[7]->titreimg}}</h4>
+                        <p>{{$portfolio[7]->categorie}}</p>
                         <div class="portfolio-links">
-                            <a href="{{asset('/img/portfolio/portfolio-8.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
+                            <a href="{{asset($portfolio[7]->img)}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{$portfolio[7]->titreimg}}"><i class="bx bx-plus"></i></a>
                             <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
@@ -134,12 +134,12 @@
             
             <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                 <div class="portfolio-wrap">
-                    <img src="{{asset('/img/portfolio/portfolio-9.jpg')}}" class="img-fluid" alt="">
+                    <img src="{{asset($portfolio[8]->img)}}" class="img-fluid" alt="">
                     <div class="portfolio-info">
-                        <h4>Web 3</h4>
-                        <p>Web</p>
+                        <h4>{{$portfolio[8]->titreimg}}</h4>
+                        <p>{{$portfolio[8]->categorie}}</p>
                         <div class="portfolio-links">
-                            <a href="{{asset('/img/portfolio/portfolio-9.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                            <a href="{{asset($portfolio[8]->img)}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{$portfolio[8]->titreimg}}"><i class="bx bx-plus"></i></a>
                             <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
@@ -149,4 +149,4 @@
         </div>
         
     </div>
-</section><!-- End Portfolio Section -->
+</section><!-- End Portfolio Section -->    

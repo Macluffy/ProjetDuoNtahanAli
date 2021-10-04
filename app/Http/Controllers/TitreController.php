@@ -13,8 +13,9 @@ class TitreController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('titre.index');
+    {   
+        $titre =  Titre::all();
+        return view('titres.index', compact('titre'));
     }
 
     /**
@@ -24,8 +25,7 @@ class TitreController extends Controller
      */
     public function create()
     {
-        $data = Titre::all();
-        return view('titre.create',compact('data'));
+        //
     }
 
     /**
@@ -51,7 +51,7 @@ class TitreController extends Controller
         $data->save();
         
 
-        return redirect()->route('titre.index')->with('message',"la données a bien été creer");
+        return redirect()->route('titres.index')->with('message',"la données a bien été creer");
     }
 
     /**
@@ -62,8 +62,7 @@ class TitreController extends Controller
      */
     public function show(Titre $titre)
     {
-        return view('titre.show',compact('titre'));
-
+        return view('titres.show', compact('titre'));
     }
 
     /**
@@ -74,8 +73,7 @@ class TitreController extends Controller
      */
     public function edit(Titre $titre)
     {
-        return view('titre.edit',compact('titre'));
-
+        return view('titres.edit', compact('titre'));
     }
 
     /**
@@ -91,18 +89,15 @@ class TitreController extends Controller
         request()->validate([
             "titre"=>["required","min:1" , "max:200" ],
             "paragraphe"=>["required","min:1" , "max:200" ],
-            
-
         ]);
 
-       
         $titre->titre = $request->titre;
         $titre->paragraphe = $request->paragraphe;
         
         $titre->save();
         
 
-        return redirect()->route('titre.index')->with('message',"la données est bien modifier");
+        return redirect()->route('titres.index')->with('message',"la données est bien modifier");
     }
 
     /**
@@ -113,9 +108,7 @@ class TitreController extends Controller
      */
     public function destroy(Titre $titre)
     {
-        // $this->authorize("delete",$titre);
-
         $titre->delete();
-        return redirect()->route('titre.index')->with('message',"la données a bien été suprimer");
+        return redirect()->route("titres.index")->with('message',"la données est bien supprimer");
     }
 }

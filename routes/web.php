@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FooterController;
+use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\AboutbtnController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\FeatureController;
@@ -30,16 +35,26 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
+Route::resource('/titres', TitreController::class);
+
 Route::resource('/header', HeaderController::class);
 
 Route::resource('/hero', HeroController::class);
 
 Route::resource('/about', AboutController::class);
 
+Route::resource('/aboutbtn', AboutbtnController::class);
+
 Route::resource('/feature', FeatureController::class);
 
 Route::resource('/service', ServiceController::class);
 
-Route::resource('/aboutbtn', AboutbtnController::class);
+Route::resource('/portfolios', PortfolioController::class );
 
-Route::resource('/titre', TitreController::class);
+Route::resource('/testimonials', TestimonialController::class);
+
+Route::resource("/teams", TeamController::class);
+
+Route::resource("/contacts", ContactController::class);
+
+Route::resource("/footers", FooterController::class);

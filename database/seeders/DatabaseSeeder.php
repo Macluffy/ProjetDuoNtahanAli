@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Portfolio;
+use App\Models\Team;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -22,7 +24,11 @@ class DatabaseSeeder extends Seeder
             ServiceSeeder::class,
             TitreSeeder::class,
             AboutbtnSeeder::class,
-
+            PortfolioSeeder::class,
+            ContactSeeder::class,
+            TeamSeeder::class,
+            TestimonialSeeder::class,
+            FooterSeeder::class,
         ]);
             
         

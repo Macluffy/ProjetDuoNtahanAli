@@ -50,7 +50,7 @@ class AboutbtnController extends Controller
         $data->save();
         
 
-        return redirect()->route('about.index');
+        return redirect()->route('about.index')->with('message',"la données a bien été creer");
     }
 
     /**
@@ -99,7 +99,7 @@ class AboutbtnController extends Controller
         $aboutbtn->save();
         
 
-        return redirect()->route('about.index');
+        return redirect()->route('about.index')->with('message',"la données est bien modifier");
     }
 
     /**

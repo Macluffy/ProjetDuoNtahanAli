@@ -1,8 +1,14 @@
 @extends('template.welcome')
 
 @section('content')
+
 <h1 class="text-center"  style="margin: 150px"> BACK OFFICE | About</h1>
 <div class="container">
+    @if (session()->has('message'))
+        <div class="alert alert-success">
+            {{session()->get('message')}}
+        </div>
+    @endif
     
     
     <div><h4>{{ $data4[0]->btn }} <i class="bx bx-chevron-right"></i></h4>

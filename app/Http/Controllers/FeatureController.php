@@ -69,7 +69,7 @@ class FeatureController extends Controller
         $request->file('img1')->storePublicly('img','public');
         
 
-        return redirect()->route('index');
+        return redirect()->route('index')->with('message',"la données a bien été creer");
     }
 
     /**
@@ -130,7 +130,7 @@ class FeatureController extends Controller
         $feature->phrase3 = $request->phrase3;
         $feature->save();
         $request->file('img1')->storePublicly('img','public');
-        return redirect()->route('feature.index');
+        return redirect()->route('feature.index')->with('message',"la données est bien modifier");
     }
 
     /**
@@ -146,7 +146,7 @@ class FeatureController extends Controller
         // Storage::disk('public')->delete('img/'. $feature->img);
         Storage::disk('public')->delete('img/'. $feature->img);
         $feature->delete();
-        return redirect()->route('feature.index');
+        return redirect()->route('feature.index')->with('message',"la données a bien été suprimer");
     }
     
 }

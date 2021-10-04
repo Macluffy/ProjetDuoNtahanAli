@@ -51,7 +51,7 @@ class TitreController extends Controller
         $data->save();
         
 
-        return redirect()->route('index');
+        return redirect()->route('titre.index')->with('message',"la données a bien été creer");
     }
 
     /**
@@ -102,7 +102,7 @@ class TitreController extends Controller
         $titre->save();
         
 
-        return redirect()->route('index');
+        return redirect()->route('titre.index')->with('message',"la données est bien modifier");
     }
 
     /**
@@ -116,6 +116,6 @@ class TitreController extends Controller
         // $this->authorize("delete",$titre);
 
         $titre->delete();
-        return redirect()->route('titres.index');
+        return redirect()->route('titre.index')->with('message',"la données a bien été suprimer");
     }
 }

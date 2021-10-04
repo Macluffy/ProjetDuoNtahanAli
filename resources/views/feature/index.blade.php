@@ -6,6 +6,11 @@
 </div>
 
 <div class="container">
+    @if (session()->has('message'))
+        <div class="alert alert-success">
+            {{session()->get('message')}}
+        </div>
+    @endif
     <!-- ======= Features Section ======= -->
     <div class="w-100 f-flex justify-content-center m-5">
         

@@ -6,6 +6,11 @@
 </div>
 
     <div class="container">
+        @if (session()->has('message'))
+        <div class="alert alert-success">
+            {{session()->get('message')}}
+        </div>
+    @endif
         <!-- ======= Header ======= -->
 <header id="header" class="">
     <div class="container d-flex align-items-center justify-content-between">

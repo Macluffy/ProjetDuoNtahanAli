@@ -59,7 +59,7 @@ class AboutController extends Controller
         $data->save();
         
 
-        return redirect()->route('index');
+        return redirect()->route('about.index')->with('message',"la données a bien été creer");
     }
 
     /**
@@ -114,7 +114,7 @@ class AboutController extends Controller
         $about->save();
         
 
-        return redirect()->route('index');
+        return redirect()->route('about.index')->with('message',"la données est bien modifier");
     }
 
     /**
@@ -128,6 +128,7 @@ class AboutController extends Controller
         // $this->authorize("delete",$about);
 
         $about->delete();
-        return redirect()->route('abouts.index');
+        return redirect()->route('about.index')->with('message',"la données a bien été suprimer");
     }
 }
+

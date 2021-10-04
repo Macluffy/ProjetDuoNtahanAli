@@ -56,7 +56,7 @@ class ServiceController extends Controller
         $data->save();
         
 
-        return redirect()->route('index');
+        return redirect()->route('service.index')->with('message',"la données a bien été creer");
     }
 
     /**
@@ -108,8 +108,9 @@ class ServiceController extends Controller
         $service->save();
         
 
-        return redirect()->route('index');
+        return redirect()->route('service.index')->with('message',"la données est bien modifier");
     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -122,6 +123,6 @@ class ServiceController extends Controller
         // $this->authorize("delete",$service);
 
         $service->delete();
-        return redirect()->route('services.index');
+        return redirect()->route('service.index')->with('message',"la données a bien été suprimer");
     }
 }

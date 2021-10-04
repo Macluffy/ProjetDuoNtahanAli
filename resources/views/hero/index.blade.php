@@ -3,6 +3,11 @@
 @section('content')
 <h1 class="text-center"  style="margin: 150px"> BACK OFFICE | Hero</h1>
     <div class="container">
+        @if (session()->has('message'))
+        <div class="alert alert-success">
+            {{session()->get('message')}}
+        </div>
+    @endif
         <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex align-items-center bg-secondary">
     

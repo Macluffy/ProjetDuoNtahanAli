@@ -6,6 +6,11 @@
 </div>
 
 <div class="container">
+    @if (session()->has('message'))
+        <div class="alert alert-success">
+            {{session()->get('message')}}
+        </div>
+    @endif
     
     @foreach ($data6 as $value)
     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">

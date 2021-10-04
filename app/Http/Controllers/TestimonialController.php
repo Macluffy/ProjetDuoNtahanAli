@@ -46,7 +46,7 @@ class TestimonialController extends Controller
 
         $testimonial->save();
 
-        return redirect()->route('testimonials.index');
+        return redirect()->route('testimonials.index')->with("message", "Datas has succesfully been created !");
 
     }
 
@@ -114,6 +114,6 @@ class TestimonialController extends Controller
         Storage::disk("public")->delete('/img/testimonials'.$testimonial->imgpersonne);
 
         $testimonial->delete();
-        return redirect()->route('testimonials.index');
+        return redirect()->route('testimonials.index')->with("message", "Datas has succesfully been destroyed !");
     }
 }

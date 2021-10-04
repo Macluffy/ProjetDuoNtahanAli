@@ -46,7 +46,7 @@ class TeamController extends Controller
 
         $request->file('imgteam')->storePublicly("img/team", "public");
 
-        return redirect()->route('teams.index');
+        return redirect()->route('teams.index')->with("message", "Datas has succesfully been created !");
     }
 
     /**
@@ -107,6 +107,6 @@ class TeamController extends Controller
         Storage::disk("public")->delete("/img/team".$team->imgteam);
 
         $team->delete();
-        return redirect()->route('teams.index');
+        return redirect()->route('teams.index')->with("message", "Datas has succesfully been destroyed !");
     }
 }

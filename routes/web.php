@@ -36,6 +36,7 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::resource('/titre', TitreController::class);
+
 Route::resource('/header', HeaderController::class);
 
 Route::resource('/hero', HeroController::class);

@@ -46,7 +46,7 @@ class PortfolioController extends Controller
 
         $request->file('img')->storePublicly("img/portfolio", "public");
 
-        return redirect()->route('portfolios.index');
+        return redirect()->route('portfolios.index')->with("message", "Datas has succesfully been created !");
 
     }
 
@@ -111,6 +111,6 @@ class PortfolioController extends Controller
         Storage::disk("public")->delete("/img/portfolio".$portfolio->img);
 
         $portfolio->delete();
-        return redirect()->route('portfolios.index');
+        return redirect()->route('portfolios.index')->with("message", "Datas has succesfully been destroyed !");
     }
 }

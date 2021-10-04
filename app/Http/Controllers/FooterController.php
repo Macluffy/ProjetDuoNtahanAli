@@ -70,6 +70,34 @@ class FooterController extends Controller
      */
     public function update(Request $request, Footer $footer)
     {
+        $request->validate([
+            'nom' => ['required' => 'min:1', 'max:255'],
+            'adress' => ['required' => 'min:1', 'max:255'],
+            'adress2' => ['required' => 'min:1', 'max:255'],
+            'ville' => ['required' => 'min:1', 'max:255'],
+            'tel' => ['required' => 'min:1', 'max:255'],
+            'numtel' => ['required' => 'min:1', 'max:255'],
+            'email' => ['required' => 'min:1', 'max:255'],
+            'links' => ['required' => 'min:1', 'max:255'],
+            'link1' => ['required' => 'min:1', 'max:255'],
+            'link2' => ['required' => 'min:1', 'max:255'],
+            'link3' => ['required' => 'min:1', 'max:255'],
+            'link4' => ['required' => 'min:1', 'max:255'],
+            'link5' => ['required' => 'min:1', 'max:255'],
+            'services' => ['required' => 'min:1', 'max:255'],
+            'link6' => ['required' => 'min:1', 'max:255'],
+            'link7' => ['required' => 'min:1', 'max:255'],
+            'link8' => ['required' => 'min:1', 'max:255'],
+            'link9' => ['required' => 'min:1', 'max:255'],
+            'link10' => ['required' => 'min:1', 'max:255'],
+            'newsletter' => ['required' => 'min:1', 'max:255'],
+            'newsletterdescription' => ['required' => 'min:1', 'max:255'],
+            'copy1' => ['required' => 'min:1', 'max:255'],
+            'copy2' => ['required' => 'min:1', 'max:255'],
+            'copy3' => ['required' => 'min:1', 'max:255'],
+            'credits' => ['required' => 'min:1', 'max:255'],
+            'credits2' => ['required' => 'min:1', 'max:255'],
+        ]);
         $footer->nom = $request->nom;
         $footer->adress = $request->adress;
         $footer->adress2 = $request->adress2;
@@ -98,7 +126,7 @@ class FooterController extends Controller
         $footer->credits = $request->credits;
 
         $footer->save();
-        return redirect()->route('footers.index');
+        return redirect()->route('footers.index')->with("message", "Datas has succesfully been changed !");
     }
 
     /**

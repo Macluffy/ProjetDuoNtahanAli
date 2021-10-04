@@ -9,6 +9,15 @@
         <a href="{{ route('teams.create') }}" class="btn btn-success mb-2 mt-2 text-white">Create</a>
     </div>
 
+    <div class="container">
+        @if (session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message')}}
+        </div>
+            
+        @endif
+    </div>
+
 
     <table class="table mt-5 container">
         <thead>

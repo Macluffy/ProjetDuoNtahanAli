@@ -6,7 +6,15 @@
 
     <div class="container d-flex justify-content-center flex-column pt-5 w-25">
         <h1 class="text-center mb-3" style="font-size: 45px">Footer</h1>
-        <a href="{{ route('footers.create') }}" class="btn btn-success mb-2  text-white">Create</a>
+    </div>
+
+    <div class="container">
+        @if (session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message')}}
+        </div>
+            
+        @endif
     </div>
 
 

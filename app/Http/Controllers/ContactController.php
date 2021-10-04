@@ -70,6 +70,15 @@ class ContactController extends Controller
      */
     public function update(Request $request, Contact $contact)
     {
+        $request->validate([
+            'asress' => ['required' => 'min:1', 'max:1000' ],
+            'rue' => ['required' => 'min:1', 'max:255'] ,
+            'emailadress' => ['required' => 'min:1', 'max:255'],
+            'contactadress' => ['required' => 'min:1', 'max:255'],
+            'number1' => ['required' => 'min:1', 'max:255'],
+            'number2' => ['required' => 'min:1', 'max:255']
+        ]);
+
         $contact->adress = $request->adress;
         $contact->rue = $request->rue;
         $contact->emailadress = $request->emailadress;
@@ -78,7 +87,7 @@ class ContactController extends Controller
         $contact->number2 = $request->number2;
 
         $contact->save();
-        return redirect()->route('contacts.index');
+        return redirect()->route('contacts.index')->with("message", "Datas has succesfully been changed !");
     }
 
     /**

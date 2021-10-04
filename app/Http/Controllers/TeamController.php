@@ -80,6 +80,12 @@ class TeamController extends Controller
      */
     public function update(Request $request, Team $team)
     {
+        $request->validate([
+            'personne' => ['required' => 'min:1', 'max:255' ],
+            'imgpersonne' => ['required' => 'min:1', 'max:255' ],
+            'nompersonne' => ['required' => 'min:1', 'max:255' ],
+            'statutpersonne' => ['required' => 'min:1', 'max:255' ]
+        ]);
         Storage::disk("public")->delete("/img/team".$team->imgteam);
 
         $team->imgteam = $request->file('url')->hashName();
@@ -87,7 +93,7 @@ class TeamController extends Controller
         $team->titreteam = $request->titreteam;
 
         $team->save();
-        return redirect()->route('teams.index');
+        return redirect()->route('teams.index')->with("message", "Datas has succesfully been changed !");
     }
 
     /**

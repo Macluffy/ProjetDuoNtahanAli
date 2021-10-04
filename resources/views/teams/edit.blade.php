@@ -7,7 +7,7 @@
     @csrf
     Nom Personne: <input class="mt-2" type="text" value="{{$team->nomteam}}" name="nomteam">
     Poste Personne: <input class="mt-2" type="text" value="{{$team->titreteam}}" name="titreteam">
-    Img Personne: <input class="mt-2" type="file" value="{{$team->imgteam}}" name="nompersonne">
+    Img Personne: <input class="mt-2" type="file" value="{{$team->imgteam}}" name="imgteam">
     @method("PUT")
     <button class="btn btn-primary mt-3" type="submit">Submit</button>
 

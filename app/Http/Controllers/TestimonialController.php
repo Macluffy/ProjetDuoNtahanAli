@@ -26,7 +26,7 @@ class TestimonialController extends Controller
      */
     public function create()
     {
-        //
+        return view('testimonials.create');
     }
 
     /**
@@ -37,7 +37,17 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $testimonial = new Testimonial;
+        
+        $testimonial->personne = $request->personne;
+        $testimonial->imgpersonne = $request->file("imgpersonne")->hashName();
+        $testimonial->nompersonne = $request->nompersonne;
+        $testimonial->statutpersonne = $request->statutpersonne;
+
+        $testimonial->save();
+
+        return redirect()->route('testimonials.index');
+
     }
 
     /**
@@ -71,6 +81,13 @@ class TestimonialController extends Controller
      */
     public function update(Request $request, Testimonial $testimonial)
     {
+        $request->validate([
+            'personne' => ['required' => 'min:1', 'max:1000' ],
+            'imgpersonne' => ['required' => 'min:1', 'max:255'] ,
+            'nompersonne' => ['required' => 'min:1', 'max:255'],
+            'statutpersonne' => ['required' => 'min:1', 'max:255']
+        ]);
+
         Storage::disk("public")->delete('/img/testimonials'.$testimonial->imgpersonne);
 
         
@@ -83,7 +100,7 @@ class TestimonialController extends Controller
 
         $request->file('imgpersonne')->storePublicly("img/testimonials", "public");
 
-        return redirect()->route('testimonials.index');
+        return redirect()->route('testimonials.index')->with("message", "Datas has succesfully been changed !");
     }
 
     /**

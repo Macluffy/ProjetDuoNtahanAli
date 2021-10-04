@@ -5,7 +5,7 @@
 <div class="card container" style="width: 40rem;">
     <ul class="list-group list-group-flush text-center pt-5">
         <li class="list-group-item my-3">{{ $testimonial->personne }}</li>
-        <li class="list-group-item"><img style="width: 100px; height: 100px;" src="{{ asset($testimonial->imgpersonne) }}" alt=""></li>
+        <li class="list-group-item d-flex justify-center"><img style="width: 100px; height: 100px;" src="{{ asset($testimonial->imgpersonne) }}" alt=""></li>
         <li class="list-group-item mb-3">{{ $testimonial->nompersonne}}</li>
         <li class="list-group-item mb-3">{{ $testimonial->statutpersonne}}</li>
         <form action="{{ route('testimonials.show', $testimonial->id) }}" method="post" class="pt-1 pb-1 my-3 d-flex justify-content-center">

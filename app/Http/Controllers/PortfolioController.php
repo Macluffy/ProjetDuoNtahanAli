@@ -80,7 +80,12 @@ class PortfolioController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Portfolio $portfolio)
-    {
+    {   
+        $request->validate([
+            'titreimg' => ['required' => 'min:1', 'max:255' ],
+            'categorie' => ['required' => 'min:1', 'max:255'] ,
+            'img' => ['required' => 'min:1', 'max:255']
+        ]);
         Storage::disk("public")->delete("/img/portfolio".$portfolio->img);
 
         $portfolio->titreimg = $request->titreimg;
@@ -92,7 +97,7 @@ class PortfolioController extends Controller
 
         $request->file('img')->storePublicly("img/portfolio", "public");
 
-        return redirect()->route('portfolios.index');
+        return redirect()->route('portfolios.index')->with("message", "Datas has succesfully been changed !");
     }
 
     /**

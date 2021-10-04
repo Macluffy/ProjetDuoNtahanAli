@@ -14,7 +14,7 @@ class TitreController extends Controller
      */
     public function index()
     {
-        return view('pages.index');
+        return view('titre.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class TitreController extends Controller
     public function create()
     {
         $data = Titre::all();
-        return view('pages.titre.create',compact('data'));
+        return view('titre.create',compact('data'));
     }
 
     /**
@@ -62,7 +62,7 @@ class TitreController extends Controller
      */
     public function show(Titre $titre)
     {
-        return view('pages.titre.show',compact('titre'));
+        return view('titre.show',compact('titre'));
 
     }
 
@@ -74,7 +74,7 @@ class TitreController extends Controller
      */
     public function edit(Titre $titre)
     {
-        return view('pages.titre.edit',compact('titre'));
+        return view('titre.edit',compact('titre'));
 
     }
 

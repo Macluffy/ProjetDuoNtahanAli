@@ -13,7 +13,7 @@
         @foreach ($data5 as $value)
 
             @if ($i % 2)
-              
+
                 <div class="row content">
                     <div class="col-md-5" data-aos="fade-right" data-aos-delay="100">
                         <img src="{{ asset('img/' . $value->img1) }}" class="img-fluid" alt="">

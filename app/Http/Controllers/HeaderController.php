@@ -14,7 +14,8 @@ class HeaderController extends Controller
      */
     public function index()
     {
-        return view('pages.index');
+        $data1 = Header::all();
+        return view('header.index',compact('data1'));
     }
 
     /**
@@ -25,7 +26,7 @@ class HeaderController extends Controller
     public function create()
     {
         $data = Header::all();
-        return view('pages.header.create',compact('data'));
+        return view('header.create',compact('data'));
     }
 
     /**
@@ -78,7 +79,7 @@ class HeaderController extends Controller
      */
     public function show(Header $header)
     {
-        return view('pages.header.show',compact('header'));
+        return view('header.show',compact('header'));
     }
 
     /**
@@ -89,7 +90,7 @@ class HeaderController extends Controller
      */
     public function edit(Header $header)
     {
-        return view('pages.header.edit',compact('header'));
+        return view('header.edit',compact('header'));
 
     }
 
@@ -130,7 +131,7 @@ class HeaderController extends Controller
         $header->dashboard = $request->dashboard;
         $header->save();
         
-        return redirect()->route('index');
+        return redirect()->route('header.index');
     }
 
     /**

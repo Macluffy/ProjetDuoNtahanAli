@@ -14,7 +14,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        return view('pages.index');
+        $data6 = Service::all();
+        return view('service.index',compact('data6'));
     }
 
     /**
@@ -24,8 +25,8 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        $data = Service::all();
-        return view('pages.service.create',compact('data'));
+        $service = Service::all();
+        return view('service.create',compact('service'));
     }
 
     /**
@@ -66,7 +67,7 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        return view('pages.service.show',compact('service'));
+        return view('service.show',compact('service'));
     }
 
     /**
@@ -77,7 +78,7 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        return view('pages.service.edit',compact('service'));
+        return view('service.edit',compact('service'));
     }
 
     /**

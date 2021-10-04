@@ -14,7 +14,7 @@ class AboutbtnController extends Controller
      */
     public function index()
     {
-        return view('pages.index');
+        
     }
 
     /**
@@ -24,8 +24,7 @@ class AboutbtnController extends Controller
      */
     public function create()
     {
-        $data = Aboutbtn::all();
-        return view('pages.aboutbtn.create',compact('data'));
+        
     }
 
     /**
@@ -51,7 +50,7 @@ class AboutbtnController extends Controller
         $data->save();
         
 
-        return redirect()->route('index');
+        return redirect()->route('about.index');
     }
 
     /**
@@ -62,7 +61,7 @@ class AboutbtnController extends Controller
      */
     public function show(Aboutbtn $aboutbtn)
     {
-        return view('pages.aboutbtn.show',compact('aboutbtn'));
+        return view('aboutbtn.show',compact('aboutbtn'));
     }
 
     /**
@@ -73,7 +72,7 @@ class AboutbtnController extends Controller
      */
     public function edit(Aboutbtn $aboutbtn)
     {
-        return view('pages.aboutbtn.edit',compact('aboutbtn'));
+        return view('aboutbtn.edit',compact('aboutbtn'));
     }
 
     /**
@@ -100,7 +99,7 @@ class AboutbtnController extends Controller
         $aboutbtn->save();
         
 
-        return redirect()->route('index');
+        return redirect()->route('about.index');
     }
 
     /**
@@ -114,6 +113,6 @@ class AboutbtnController extends Controller
         // $this->authorize("delete",$aboutbtn);
 
         $aboutbtn->delete();
-        return redirect()->route('aboutbtns.index');
+        return redirect()->route('about.index');
     }
 }

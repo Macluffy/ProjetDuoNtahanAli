@@ -30,16 +30,16 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::resource('header', HeaderController::class);
+Route::resource('/header', HeaderController::class);
 
-Route::resource('hero', HeroController::class);
+Route::resource('/hero', HeroController::class);
 
-Route::resource('about', AboutController::class);
+Route::resource('/about', AboutController::class);
 
-Route::resource('feature', FeatureController::class);
+Route::resource('/feature', FeatureController::class);
 
-Route::resource('service', ServiceController::class);
+Route::resource('/service', ServiceController::class);
 
-Route::resource('aboutbtn', AboutbtnController::class);
+Route::resource('/aboutbtn', AboutbtnController::class);
 
-Route::resource('titre', TitreController::class);
+Route::resource('/titre', TitreController::class);

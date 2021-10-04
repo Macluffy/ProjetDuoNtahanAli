@@ -15,7 +15,8 @@ class HeroController extends Controller
      */
     public function index()
     {
-        return view('pages.index');
+        $data2 = Hero::all();
+        return view('hero.index',compact('data2'));
     }
 
     /**
@@ -26,7 +27,7 @@ class HeroController extends Controller
     public function create()
     {
         $data = Hero::all();
-        return view('pages.hero.create',compact('data'));
+        return view('hero.create',compact('data'));
     }
 
     /**
@@ -67,7 +68,7 @@ class HeroController extends Controller
      */
     public function show(Hero $hero)
     {
-        return view('pages.hero.show',compact('hero'));
+        return view('hero.show',compact('hero'));
     }
 
     /**
@@ -78,7 +79,7 @@ class HeroController extends Controller
      */
     public function edit(Hero $hero)
     {
-        return view('pages.hero.edit',compact('hero'));
+        return view('hero.edit',compact('hero'));
 
     }
 

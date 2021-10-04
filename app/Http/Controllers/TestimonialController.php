@@ -75,11 +75,14 @@ class TestimonialController extends Controller
 
         
         $testimonial->personne = $request->personne;
-        $testimonial->imgpersonne = $request->file("url")->hashName();
+        $testimonial->imgpersonne = $request->file("imgpersonne")->hashName();
         $testimonial->nompersonne = $request->nompersonne;
         $testimonial->statutpersonne = $request->statutpersonne;
 
         $testimonial->save();
+
+        $request->file('imgpersonne')->storePublicly("img/testimonials", "public");
+
         return redirect()->route('testimonials.index');
     }
 
@@ -91,11 +94,7 @@ class TestimonialController extends Controller
      */
     public function destroy(Testimonial $testimonial)
     {
-        Storage::disk("public")->delete('/img/testimonials'.$testimonial->imgpersonne1);
-        Storage::disk("public")->delete('/img/testimonials'.$testimonial->imgpersonne2);
-        Storage::disk("public")->delete('/img/testimonials'.$testimonial->imgpersonne3);
-        Storage::disk("public")->delete('/img/testimonials'.$testimonial->imgpersonne4);
-        Storage::disk("public")->delete('/img/testimonials'.$testimonial->imgpersonne5);
+        Storage::disk("public")->delete('/img/testimonials'.$testimonial->imgpersonne);
 
         $testimonial->delete();
         return redirect()->route('testimonials.index');

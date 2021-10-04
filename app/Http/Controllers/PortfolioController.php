@@ -26,7 +26,7 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        //
+        return view('portfolios.create');
     }
 
     /**
@@ -37,7 +37,17 @@ class PortfolioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $portfolio = new Portfolio;
+        $portfolio->titreimg = $request->titreimg;
+        $portfolio->categorie = $request->categorie;
+        $portfolio->img = $request->file('img')->hashName();
+
+        $portfolio->save();
+
+        $request->file('img')->storePublicly("img/portfolio", "public");
+
+        return redirect()->route('portfolios.index');
+
     }
 
     /**
@@ -75,12 +85,12 @@ class PortfolioController extends Controller
 
         $portfolio->titreimg = $request->titreimg;
         $portfolio->categorie = $request->categorie;
-        $portfolio->img = $request->file('url')->hashName();
+        $portfolio->img = $request->file('img')->hashName();
         
 
         $portfolio->save();
 
-        $request->file('url')->storePublicly("img/portfolio", "public");
+        $request->file('img')->storePublicly("img/portfolio", "public");
 
         return redirect()->route('portfolios.index');
     }

@@ -26,7 +26,7 @@ class TeamController extends Controller
      */
     public function create()
     {
-        //
+        return view('teams.create');
     }
 
     /**
@@ -37,7 +37,16 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $team = new Team;
+        $team->imgteam = $request->file('imgteam')->hashName();
+        $team->nomteam = $request->nomteam;
+        $team->titreteam = $request->titreteam;
+
+        $team->save();
+
+        $request->file('imgteam')->storePublicly("img/team", "public");
+
+        return redirect()->route('teams.index');
     }
 
     /**

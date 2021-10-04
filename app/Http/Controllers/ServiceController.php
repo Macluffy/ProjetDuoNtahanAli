@@ -37,7 +37,7 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        // $this->authorize("create",service::class);
+        $this->authorize("create",Service::class);
         request()->validate([
             
             "icon1"=>["required","min:1" , "max:200" ],
@@ -90,7 +90,7 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
-        // $this->authorize("create",service::class);
+        $this->authorize("update",$service);
         request()->validate([
             
             "icon1"=>["required","min:1" , "max:200" ],
@@ -120,7 +120,7 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        // $this->authorize("delete",$service);
+        $this->authorize("delete",$service);
 
         $service->delete();
         return redirect()->route('service.index')->with('message',"la données a bien été suprimer");

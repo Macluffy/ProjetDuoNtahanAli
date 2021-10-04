@@ -1,4 +1,4 @@
-@extends('template.welcome')
+@extends('template.mainbackoffice')
 
 @section('content')
 <h1 class="text-center"  style="margin: 150px"> BACK OFFICE | Hero</h1>
@@ -9,7 +9,7 @@
         </div>
     @endif
         <!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex align-items-center bg-secondary">
+<section id="hero" class="d-flex align-items-center">
     
     <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
         <h1>{{ $data2[0]->titre }}</h1>
@@ -23,6 +23,8 @@
     </div>
     <div
     class="d-flex justify-content-center m-5">
+    @can('update', $data2[0])
         <a href="{{route('hero.edit',$data2[0]->id)}}" class="btn btn-warning">Edit</a>
     </div>
+    @endcan
 @endsection

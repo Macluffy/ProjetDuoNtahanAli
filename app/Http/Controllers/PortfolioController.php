@@ -37,6 +37,7 @@ class PortfolioController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize("create",Portfolio::class);
         $portfolio = new Portfolio;
         $portfolio->titreimg = $request->titreimg;
         $portfolio->categorie = $request->categorie;
@@ -81,6 +82,7 @@ class PortfolioController extends Controller
      */
     public function update(Request $request, Portfolio $portfolio)
     {   
+        $this->authorize("update",$portfolio);
         $request->validate([
             'titreimg' => ['required' => 'min:1', 'max:255' ],
             'categorie' => ['required' => 'min:1', 'max:255'] ,
@@ -108,6 +110,7 @@ class PortfolioController extends Controller
      */
     public function destroy(Portfolio $portfolio)
     {
+        $this->authorize("delete",$portfolio);
         Storage::disk("public")->delete("/img/portfolio".$portfolio->img);
 
         $portfolio->delete();

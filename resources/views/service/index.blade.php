@@ -1,5 +1,4 @@
-@extends('template.welcome')
-
+@extends('template.mainbackoffice')
 @section('content')
 <div>
     <h1 class="text-center"  style="margin: 150px"> BACK OFFICE | service</h1>
@@ -11,7 +10,12 @@
             {{session()->get('message')}}
         </div>
     @endif
-    
+    <div>
+    <a href="{{route('service.create')}}" class="btn btn-primary  m-5">Create new</a>
+</div>
+    <div>
+        <p></p>
+    </div>
     @foreach ($data6 as $value)
     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
     <div class="icon-box">
@@ -33,9 +37,7 @@
 @endforeach
 
 
-<div>
-    <a href="{{route('service.create')}}" class="btn btn-primary  m-5">Create new</a>
-</div>
+
         
 </div>       
 

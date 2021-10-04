@@ -37,6 +37,7 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize("create",Testimonial::class);
         $testimonial = new Testimonial;
         
         $testimonial->personne = $request->personne;
@@ -81,6 +82,7 @@ class TestimonialController extends Controller
      */
     public function update(Request $request, Testimonial $testimonial)
     {
+        $this->authorize("update",$testimonial);
         $request->validate([
             'personne' => ['required' => 'min:1', 'max:1000' ],
             'imgpersonne' => ['required' => 'min:1', 'max:255'] ,
@@ -111,6 +113,7 @@ class TestimonialController extends Controller
      */
     public function destroy(Testimonial $testimonial)
     {
+        $this->authorize("delete",$testimonial);
         Storage::disk("public")->delete('/img/testimonials'.$testimonial->imgpersonne);
 
         $testimonial->delete();

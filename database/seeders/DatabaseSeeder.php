@@ -29,8 +29,7 @@ class DatabaseSeeder extends Seeder
             TeamSeeder::class,
             TestimonialSeeder::class,
             FooterSeeder::class,
+            RoleSeeder::class,
         ]);
-            
-        
     }
 }

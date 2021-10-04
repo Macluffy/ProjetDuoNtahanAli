@@ -39,7 +39,7 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-        // $this->authorize("create",about::class);
+        $this->authorize("create",About::class);
         request()->validate([
             
             "icon1"=>["required","min:1" , "max:200" ],
@@ -95,7 +95,7 @@ class AboutController extends Controller
      */
     public function update(Request $request, About $about)
     {
-        // $this->authorize("update",about::class);
+        $this->authorize("update",$about);
         request()->validate([
             
             "icon1"=>["required","min:1" , "max:200" ],
@@ -125,8 +125,7 @@ class AboutController extends Controller
      */
     public function destroy(About $about)
     {
-        // $this->authorize("delete",$about);
-
+        $this->authorize("delete",$about);
         $about->delete();
         return redirect()->route('about.index')->with('message',"la données a bien été suprimer");
     }

@@ -1,4 +1,4 @@
-@extends('template.welcome')
+@extends('template.mainbackoffice')
 
 @section('content')
 <div>
@@ -82,10 +82,7 @@
         
     </div>
 </section><!-- End Features Section -->
-<div>
-    <a href="{{route('feature.create')}}" class="btn btn-primary w-25 m-5">Create new</a>
 
-</div>
 
 
 </div>

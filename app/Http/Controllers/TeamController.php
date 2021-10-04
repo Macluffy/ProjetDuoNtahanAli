@@ -37,6 +37,7 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize("create",Team::class);
         $team = new Team;
         $team->imgteam = $request->file('imgteam')->hashName();
         $team->nomteam = $request->nomteam;
@@ -80,6 +81,7 @@ class TeamController extends Controller
      */
     public function update(Request $request, Team $team)
     {
+        $this->authorize("update",$team);
         $request->validate([
             'personne' => ['required' => 'min:1', 'max:255' ],
             'imgpersonne' => ['required' => 'min:1', 'max:255' ],
@@ -104,6 +106,7 @@ class TeamController extends Controller
      */
     public function destroy(Team $team)
     {
+        $this->authorize("delete",$team);
         Storage::disk("public")->delete("/img/team".$team->imgteam);
 
         $team->delete();

@@ -1,4 +1,4 @@
-@extends('template.welcome')
+@extends('template.mainbackoffice')
 @section('content')
 @if ($errors->any())
 <div class="alert alert-danger" >

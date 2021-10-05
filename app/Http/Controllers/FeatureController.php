@@ -39,7 +39,8 @@ class FeatureController extends Controller
      */
     public function store(Request $request)
     {
-        // $this->authorize("create",feature::class);
+        $this->authorize("bienvenu");
+        $this->authorize("create",Feature::class);
         request()->validate([
             
             "img1"=>["required","min:1" , "max:200" ],
@@ -80,6 +81,7 @@ class FeatureController extends Controller
      */
     public function show(Feature $feature)
     {
+        $this->authorize("bienvenu");
         return view('feature.show',compact('feature'));
 
     }
@@ -105,7 +107,8 @@ class FeatureController extends Controller
      */
     public function update(Request $request, Feature $feature)
     {
-        // $this->authorize("create",feature::class);
+        $this->authorize("bienvenu");
+        $this->authorize("update",$feature);
         request()->validate([
             
             "img1"=>["required","min:1" , "max:200" ],
@@ -141,7 +144,7 @@ class FeatureController extends Controller
      */
     public function destroy(Feature $feature)
     {
-        // $this->authorize("delete",$feature);
+        $this->authorize("delete",$feature);
         
         // Storage::disk('public')->delete('img/'. $feature->img);
         Storage::disk('public')->delete('img/'. $feature->img);

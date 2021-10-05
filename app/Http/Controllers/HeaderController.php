@@ -37,7 +37,7 @@ class HeaderController extends Controller
      */
     public function store(Request $request)
     {
-        // $this->authorize("create",Header::class);
+        $this->authorize("create",Header::class);
         request()->validate([
             "titrenav"=>["required","min:1" , "max:200" ],
             "link1nav"=>["required","min:1" , "max:200" ],
@@ -103,7 +103,7 @@ class HeaderController extends Controller
      */
     public function update(Request $request, Header $header)
     {
-        // $this->authorize("create",Header::class);
+        $this->authorize("update",$header);
         request()->validate([
             "titrenav"=>["required","min:1" , "max:200" ],
             "link1nav"=>["required","min:1" , "max:200" ],
@@ -142,7 +142,7 @@ class HeaderController extends Controller
      */
     public function destroy(Header $header)
     {
-        // $this->authorize("delete",$header);
+        $this->authorize("delete",$header);
 
         $header->delete();
         return redirect()->route('header.index')->with('message',"la données a bien été suprimer");

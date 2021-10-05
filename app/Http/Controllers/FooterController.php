@@ -70,6 +70,7 @@ class FooterController extends Controller
      */
     public function update(Request $request, Footer $footer)
     {
+        $this->authorize("update",$footer);
         $request->validate([
             'nom' => ['required' => 'min:1', 'max:255'],
             'adress' => ['required' => 'min:1', 'max:255'],
@@ -137,6 +138,7 @@ class FooterController extends Controller
      */
     public function destroy(Footer $footer)
     {
+        $this->authorize("delete",$footer);
         $footer->delete();
         return redirect()->route('footers.index');
     }

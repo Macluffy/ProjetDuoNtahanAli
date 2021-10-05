@@ -1,4 +1,4 @@
-@extends('template.welcome')
+@extends('template.mainbackoffice')
 
 @section('content')
 <div>

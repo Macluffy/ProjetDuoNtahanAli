@@ -1,8 +1,8 @@
-@extends('template.welcome')
+@extends('template.mainbackoffice')
 
 @section('content')
 <div>
-    <h1 class="text-center"  style="margin: 150px"> BACK OFFICE | Heeader</h1>
+    <h1 class="text-center"  style="padding:100px"> BACK OFFICE | Heeader</h1>
 </div>
 
     <div class="container">
@@ -13,14 +13,14 @@
     @endif
         <!-- ======= Header ======= -->
 <header id="header" class="">
-    <div class="container d-flex align-items-center justify-content-between">
+    <div class="container d-flex align-items-center justify-content-around">
         
         <h1 class="logo"><a href="nav-link scrollto">{{ $data1[0]->titrenav }}</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo"><img src="{{asset('')}}/img/logo.png" alt="" class="img-fluid"></a>-->
         
         <nav id="navbar" class="navbar">
-            <ul>
+            <ul class="d-flex">
                 <li><a class="nav-link scrollto " href="">{{ $data1[0]->link1nav }}</a></li>
                 <li><a class="nav-link scrollto" href="">{{ $data1[0]->link2nav }}</a></li>
                 <li><a class="nav-link scrollto" href="">{{ $data1[0]->link3nav }}</a></li>

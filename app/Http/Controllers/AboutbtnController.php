@@ -85,7 +85,7 @@ class AboutbtnController extends Controller
      */
     public function update(Request $request, Aboutbtn $aboutbtn)
     {
-        // $this->authorize("create",aboutbtn::class);
+        $this->authorize("update",$aboutbtn);
         request()->validate([
             "btn"=>["required","min:1" , "max:200" ],
             
@@ -111,7 +111,7 @@ class AboutbtnController extends Controller
      */
     public function destroy(Aboutbtn $aboutbtn)
     {
-        // $this->authorize("delete",$aboutbtn);
+        $this->authorize("delete",$aboutbtn);
 
         $aboutbtn->delete();
         return redirect()->route('about.index');

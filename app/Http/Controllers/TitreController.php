@@ -36,7 +36,7 @@ class TitreController extends Controller
      */
     public function store(Request $request)
     {
-        // $this->authorize("create",Titre::class);
+        $this->authorize("create",Titre::class);
         request()->validate([
             "titre"=>["required","min:1" , "max:200" ],
             "paragraphe"=>["required","min:1" , "max:200" ],
@@ -85,7 +85,7 @@ class TitreController extends Controller
      */
     public function update(Request $request, Titre $titre)
     {
-        // $this->authorize("create",Titre::class);
+        $this->authorize("update",$titre);
         request()->validate([
             "titre"=>["required","min:1" , "max:200" ],
             "paragraphe"=>["required","min:1" , "max:200" ],
@@ -108,6 +108,7 @@ class TitreController extends Controller
      */
     public function destroy(Titre $titre)
     {
+        $this->authorize("delete",$titre);
         $titre->delete();
         return redirect()->route("titres.index")->with('message',"la données est bien supprimer");
     }

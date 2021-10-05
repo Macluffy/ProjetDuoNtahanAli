@@ -35,26 +35,26 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::resource('/titres', TitreController::class);
+Route::resource('/titres', TitreController::class)->middleware(['auth','admin']);
 
-Route::resource('/header', HeaderController::class);
+Route::resource('/header', HeaderController::class)->middleware(['auth']);
 
-Route::resource('/hero', HeroController::class);
+Route::resource('/hero', HeroController::class)->middleware(['auth']);
 
-Route::resource('/about', AboutController::class);
+Route::resource('/about', AboutController::class)->middleware(['auth']);
 
-Route::resource('/aboutbtn', AboutbtnController::class);
+Route::resource('/aboutbtn', AboutbtnController::class)->middleware(['auth']);
 
-Route::resource('/feature', FeatureController::class);
+Route::resource('/feature', FeatureController::class)->middleware(['auth']);
 
-Route::resource('/service', ServiceController::class);
+Route::resource('/service', ServiceController::class)->middleware(['auth']);
 
-Route::resource('/portfolios', PortfolioController::class );
+Route::resource('/portfolios', PortfolioController::class )->middleware(['auth']);
 
-Route::resource('/testimonials', TestimonialController::class);
+Route::resource('/testimonials', TestimonialController::class)->middleware(['auth']);
 
-Route::resource("/teams", TeamController::class);
+Route::resource("/teams", TeamController::class)->middleware(['auth']);
 
-Route::resource("/contacts", ContactController::class);
+Route::resource("/contacts", ContactController::class)->middleware(['auth']);
 
-Route::resource("/footers", FooterController::class);
+Route::resource("/footers", FooterController::class)->middleware(['auth']);

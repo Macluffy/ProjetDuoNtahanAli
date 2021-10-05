@@ -70,6 +70,7 @@ class ContactController extends Controller
      */
     public function update(Request $request, Contact $contact)
     {
+        $this->authorize("update",$contact);
         $request->validate([
             'asress' => ['required' => 'min:1', 'max:1000' ],
             'rue' => ['required' => 'min:1', 'max:255'] ,
@@ -98,6 +99,7 @@ class ContactController extends Controller
      */
     public function destroy(Contact $contact)
     {
+        $this->authorize("delete",$contact);
         $contact->delete();
         return redirect('contacts.index');
     }

@@ -38,13 +38,18 @@
                     <td>{{ $data->categorie }}</td>
                     <td><img style="width: 35px; height: 35px;" src="{{asset($data->img)}}" alt=""></td>
                     <td class="d-flex">
+                        @can('update', $data)
                         <a href="{{ route('portfolios.edit', $data->id) }}" class="btn btn-info mx-2">Edit</a>
+
+                        @endcan
                         <a href="{{ route('portfolios.show', $data->id) }}" class="btn btn-warning mr-2">Show</a>
 
                         <form action="{{ route('portfolios.destroy', $data->id) }}" method="post">
                             @method('DELETE')
                             @csrf
+                            @can('delete', $data)
                             <button class="btn btn-danger mx-2">Delete</button>
+                            @endcan
                         </form>
                     </td>
                 </tr>

@@ -38,7 +38,7 @@ class HeroController extends Controller
      */
     public function store(Request $request)
     {
-        // $this->authorize("create",Hero::class);
+        $this->authorize("create",Hero::class);
         request()->validate([
             "titre"=>["required","min:1" , "max:200" ],
             "soustitre"=>["required","min:1" , "max:200" ],
@@ -92,7 +92,7 @@ class HeroController extends Controller
      */
     public function update(Request $request, Hero $hero)
     {
-        // $this->authorize("create",Header::class);
+        $this->authorize("update",$hero);
         request()->validate([
             "titre"=>["required","min:1" , "max:200" ],
             "soustitre"=>["required","min:1" , "max:200" ],
@@ -121,7 +121,7 @@ class HeroController extends Controller
      */
     public function destroy(Hero $hero)
     {
-        // $this->authorize("delete",$hero);
+        $this->authorize("delete",$hero);
         
         Storage::disk('public')->delete('img/'. $hero->img);
         $hero->delete();

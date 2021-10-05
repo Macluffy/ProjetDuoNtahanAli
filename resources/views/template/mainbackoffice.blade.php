@@ -21,42 +21,49 @@
         </div>
         <ul class="nav-list">
             <li>
-                <a href="#">
+                <a href="/dashboard">
+                    <i class='bx bxs-dashboard'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="{{route('titres.index')}}">
                     <i class='bx bx-bracket'></i>
                     <span class="links_name">Titres</span>
                 </a>
                 <span class="tooltip">Titres</span>
             </li>
             <li>
-                <a href="#">
+                <a href="{{route('header.index')}}">
                     <i class='bx bx-headphone'></i>
                     <span class="links_name">Header</span>
                 </a>
                 <span class="tooltip">Header</span>
             </li>
             <li>
-                <a href="#">
+                <a href="{{route('hero.index')}}">
                     <i class='bx bx-heading'></i>
                     <span class="links_name">Hero</span>
                 </a>
                 <span class="tooltip">Hero</span>
             </li>
             <li>
-                <a href="#">
+                <a href="{{route('about.index')}}">
                     <i class='bx bx-dots-horizontal-rounded'></i>
                     <span class="links_name">About</span>
                 </a>
                 <span class="tooltip">About</span>
             </li>
             <li>
-                <a href="#">
+                <a href="{{route('feature.index')}}">
                     <i class='bx bxs-detail'></i>
                     <span class="links_name">Features</span>
                 </a>
                 <span class="tooltip">Features</span>
             </li>
             <li>
-                <a href="#">
+                <a href="{{route('service.index')}}">
                     <i class='bx bx-dots-vertical'></i>
                     <span class="links_name">Services</span>
                 </a>

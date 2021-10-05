@@ -15,7 +15,8 @@ class HeroController extends Controller
      */
     public function index()
     {
-        return view('hero.index');
+        $data2 = Hero::all();
+        return view('hero.index',compact('data2'));
     }
 
     /**
@@ -56,7 +57,7 @@ class HeroController extends Controller
         $request->file('image')->storePublicly('img','public');
         
 
-        return redirect()->route('index');
+        return redirect()->route('hero.index')->with('message',"la données a bien été creer");
     }
 
     /**
@@ -109,7 +110,7 @@ class HeroController extends Controller
         Storage::disk('public')->delete('img/'. $hero->img);
         
 
-        return redirect()->route('index');
+        return redirect()->route('hero.index')->with('message',"la données est bien modifier");
     }
 
     /**
@@ -124,6 +125,6 @@ class HeroController extends Controller
         
         Storage::disk('public')->delete('img/'. $hero->img);
         $hero->delete();
-        return redirect()->route('hero.index');
+        return redirect()->route('hero.index')->with('message',"la données a bien été suprimer");
     }
 }

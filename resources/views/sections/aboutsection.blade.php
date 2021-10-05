@@ -14,8 +14,6 @@
                         <a href="#" class="about-btn">{{ $data4[0]->btn }} <i class="bx bx-chevron-right"></i></a>
                     </div>
                 </div>
-               
-                    
                 
                 <div class="col-xl-7 d-flex align-items-stretch" data-aos="fade-left">
                     <div class="icon-boxes d-flex flex-column justify-content-center">

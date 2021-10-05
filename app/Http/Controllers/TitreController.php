@@ -36,7 +36,22 @@ class TitreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $this->authorize("create",Titre::class);
+        request()->validate([
+            "titre"=>["required","min:1" , "max:200" ],
+            "paragraphe"=>["required","min:1" , "max:200" ],
+            
+
+        ]);
+
+        $data = new Titre();
+        $data->titre = $request->titre;
+        $data->paragraphe = $request->paragraphe;
+        
+        $data->save();
+        
+
+        return redirect()->route('titres.index')->with('message',"la données a bien été creer");
     }
 
     /**
@@ -82,7 +97,7 @@ class TitreController extends Controller
         $titre->save();
         
 
-        return redirect()->route('index');
+        return redirect()->route('titres.index')->with('message',"la données est bien modifier");
     }
 
     /**
@@ -94,6 +109,6 @@ class TitreController extends Controller
     public function destroy(Titre $titre)
     {
         $titre->delete();
-        return redirect()->route("titres.index");
+        return redirect()->route("titres.index")->with('message',"la données est bien supprimer");
     }
 }

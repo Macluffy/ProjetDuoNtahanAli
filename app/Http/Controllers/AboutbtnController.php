@@ -14,7 +14,7 @@ class AboutbtnController extends Controller
      */
     public function index()
     {
-        return view('aboutbtn.index');
+        return view('about.index');
     }
 
     /**
@@ -51,7 +51,7 @@ class AboutbtnController extends Controller
         $data->save();
         
 
-        return redirect()->route('index');
+        return redirect()->route('about.index')->with('message',"la données a bien été creer");
     }
 
     /**
@@ -100,7 +100,7 @@ class AboutbtnController extends Controller
         $aboutbtn->save();
         
 
-        return redirect()->route('index');
+        return redirect()->route('about.index')->with('message',"la données est bien modifier");
     }
 
     /**
@@ -114,6 +114,6 @@ class AboutbtnController extends Controller
         // $this->authorize("delete",$aboutbtn);
 
         $aboutbtn->delete();
-        return redirect()->route('aboutbtn.index');
+        return redirect()->route('about.index');
     }
 }

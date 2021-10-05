@@ -35,29 +35,26 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::resource('/titre', TitreController::class);
+Route::resource('/titres', TitreController::class);
 
 Route::resource('/header', HeaderController::class);
 
 Route::resource('/hero', HeroController::class);
 
-Route::resource('/feature', FeatureController::class);
-
-Route::resource('/service', ServiceController::class);
-
 Route::resource('/about', AboutController::class);
 
 Route::resource('/aboutbtn', AboutbtnController::class);
 
+Route::resource('/feature', FeatureController::class);
 
-
+Route::resource('/service', ServiceController::class);
 
 Route::resource('/portfolios', PortfolioController::class );
+
 Route::resource('/testimonials', TestimonialController::class);
+
 Route::resource("/teams", TeamController::class);
+
 Route::resource("/contacts", ContactController::class);
+
 Route::resource("/footers", FooterController::class);
-
-
-
-

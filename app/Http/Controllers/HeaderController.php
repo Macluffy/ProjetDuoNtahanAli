@@ -14,7 +14,8 @@ class HeaderController extends Controller
      */
     public function index()
     {
-        return view('header.index');
+        $data1 = Header::all();
+        return view('header.index',compact('data1'));
     }
 
     /**
@@ -67,7 +68,7 @@ class HeaderController extends Controller
         $data->save();
         
 
-        return redirect()->route('index');
+        return redirect()->route('header.index')->with('message',"la données a bien été creer");
     }
 
     /**
@@ -130,7 +131,7 @@ class HeaderController extends Controller
         $header->dashboard = $request->dashboard;
         $header->save();
         
-        return redirect()->route('index');
+        return redirect()->route('header.index')->with('message',"la données est bien modifier");
     }
 
     /**
@@ -144,6 +145,6 @@ class HeaderController extends Controller
         // $this->authorize("delete",$header);
 
         $header->delete();
-        return redirect()->route('portfolio.index');
+        return redirect()->route('header.index')->with('message',"la données a bien été suprimer");
     }
 }

@@ -14,7 +14,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        return view('service.index');
+        $data6 = Service::all();
+        return view('service.index',compact('data6'));
     }
 
     /**
@@ -24,8 +25,8 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        $data = Service::all();
-        return view('service.create',compact('data'));
+        $service = Service::all();
+        return view('service.create',compact('service'));
     }
 
     /**
@@ -55,7 +56,7 @@ class ServiceController extends Controller
         $data->save();
         
 
-        return redirect()->route('index');
+        return redirect()->route('service.index')->with('message',"la données a bien été creer");
     }
 
     /**
@@ -107,8 +108,9 @@ class ServiceController extends Controller
         $service->save();
         
 
-        return redirect()->route('index');
+        return redirect()->route('service.index')->with('message',"la données est bien modifier");
     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -121,6 +123,6 @@ class ServiceController extends Controller
         // $this->authorize("delete",$service);
 
         $service->delete();
-        return redirect()->route('service.index');
+        return redirect()->route('service.index')->with('message',"la données a bien été suprimer");
     }
 }

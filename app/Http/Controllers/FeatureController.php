@@ -27,6 +27,7 @@ class FeatureController extends Controller
      */
     public function create()
     {
+        
         $feature = Feature::all();
         return view('feature.create',compact('feature'));
     }
@@ -39,7 +40,6 @@ class FeatureController extends Controller
      */
     public function store(Request $request)
     {
-        $this->authorize("bienvenu");
         $this->authorize("create",Feature::class);
         request()->validate([
             
@@ -70,7 +70,7 @@ class FeatureController extends Controller
         $request->file('img1')->storePublicly('img','public');
         
 
-        return redirect()->route('index')->with('message',"la données a bien été creer");
+        return redirect()->route('feature.index')->with('message',"la données a bien été creer");
     }
 
     /**
@@ -81,7 +81,7 @@ class FeatureController extends Controller
      */
     public function show(Feature $feature)
     {
-        $this->authorize("bienvenu");
+        
         return view('feature.show',compact('feature'));
 
     }
@@ -107,7 +107,6 @@ class FeatureController extends Controller
      */
     public function update(Request $request, Feature $feature)
     {
-        $this->authorize("bienvenu");
         $this->authorize("update",$feature);
         request()->validate([
             
@@ -144,7 +143,6 @@ class FeatureController extends Controller
      */
     public function destroy(Feature $feature)
     {
-        $this->authorize("delete",$feature);
         
         // Storage::disk('public')->delete('img/'. $feature->img);
         Storage::disk('public')->delete('img/'. $feature->img);

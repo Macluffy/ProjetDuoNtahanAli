@@ -37,7 +37,7 @@ class PortfolioPolicy
      * Determine whether the user can create models.
      *
      * @param  \App\Models\User  $user
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @return \Illuminate\Auth\Access\Reséponse|bool
      */
     public function create(User $user)
     {
@@ -49,7 +49,7 @@ class PortfolioPolicy
      *
      * @param  \App\Models\User  $user
      * @param  \App\Models\Portfolio  $portfolio
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @return \Illuminate\Auth\Access\Reséponse|bool
      */
     public function update(User $user, Portfolio $portfolio)
     {
@@ -61,7 +61,7 @@ class PortfolioPolicy
      *
      * @param  \App\Models\User  $user
      * @param  \App\Models\Portfolio  $portfolio
-     * @return \Illuminate\Auth\Access\Response|bool
+     * @return \Illuminate\Auth\Access\Reséponse|bool
      */
     public function delete(User $user, Portfolio $portfolio)
     {

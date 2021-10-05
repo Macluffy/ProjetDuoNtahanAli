@@ -38,9 +38,12 @@
                     <td>{{ $data->titreteam }}</td>
                     <td><img style="width: 35px; height: 35px;" src="{{asset($data->imgteam)}}" alt=""></td>
                     <td class="d-flex">
+                        @can('update', $data)
+                            
                         <a href="{{ route('teams.edit', $data->id) }}" class="btn btn-info mx-2">Edit</a>
+                        @endcan
                         <a href="{{ route('teams.show', $data->id) }}" class="btn btn-warning mr-2">Show</a>
-
+                        
                         <form action="{{ route('teams.destroy', $data->id) }}" method="post">
                             @method('DELETE')
                             @csrf
